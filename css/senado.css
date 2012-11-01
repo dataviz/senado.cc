@@ -1,0 +1,20 @@
+.container {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    width: 95%;
+}
+
+.span8 {
+    width: 47%;
+}
+
+table th, table td {
+    text-align: center;
+}
+
+.logo {
+    padding-top: 20px;
+    padding-bottom: 50px;
+    font-size: 50px;
+    text-align: center;
+}
