@@ -1,20 +1,60 @@
-.container {
-    margin-top: 15px;
-    margin-bottom: 15px;
-    width: 95%;
+body {
+  font-family: Lato, sans-serif;
+  font-size: 14px;
+  line-height: 21px;
+  background-color: #eee;
 }
 
-.span8 {
-    width: 47%;
+label,
+input,
+select,
+textarea {
+  font-family: Lato, sans-serif;
+}
+.wrapper {
+  width: 90%;
+  padding: 20px 0;
+  margin: 0 auto;
 }
 
-table th, table td {
-    text-align: center;
+.header {
+  overflow: hidden;
 }
-
+.header-bar {
+  border-top: 5px solid #00A859;
+}
+.header-bar:before {
+  border-top: 5px solid #FFCC29;
+  content: ' ';
+  display: block;
+}
+.header-bar:after {
+  border-top: 5px solid #3E4095;
+  content: ' ';
+  display: block;
+}
 .logo {
-    padding-top: 20px;
-    padding-bottom: 50px;
-    font-size: 50px;
-    text-align: center;
+  margin: 0 auto;
+  font-size: 50px;
+  height: 50px;
+  width: 30%;
+  float: left;
+}
+.logo a {
+  color: #00A859;
+  display: block;
+}
+.search {
+  width: 70%;
+  float: right;
+}
+.search .query {
+  width: 100%;
+  border: 1px solid #ddd;
+  padding: 10px;
+  line-height: 22px;
+  font-size: 18px;
+}
+table th {
+  white-space: nowrap;
 }

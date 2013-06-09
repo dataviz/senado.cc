@@ -1,36 +1,44 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html>
-	<head>
-		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-		
-		<title>senado.cc</title>
-		
-		<link rel="shortcut icon" type="image/ico" href="http://www.datatables.net/favicon.ico" />
-		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-		<link rel="stylesheet" type="text/css" href="css/DT_bootstrap.css">
-		<link rel="stylesheet" type="text/css" href="css/senado.css">
-
-		<script type="text/javascript" language="javascript" src="js/jquery-1.8.2.min.js"></script>
-		<script type="text/javascript" language="javascript" src="js/jquery.dataTables.min.js"></script>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>senado.cc</title>
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+    <link rel="shortcut icon" type="image/ico" href="http://www.datatables.net/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/DT_bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/senado.css">
+    <script type="text/javascript" language="javascript" src="js/jquery-1.8.2.min.js"></script>
+    <script type="text/javascript" language="javascript" src="js/jquery.dataTables.min.js"></script>
     <script type="text/javascript" language="javascript" src="js/jquery.csv-0.7.min.js"></script>
     <script type="text/javascript" language="javascript" src="js/senado.js"></script>
-	</head>
-	<body>
-		<div class="container">
-      <h1 class="logo">senado.cc</h1>
-      <div id="table"></div>
+  </head>
+  <body>
+    <div class="header">
+      <div class="header-bar"></div>
+      <div class="wrapper">
+        <h1 class="logo">
+          <a href='/'>senado.cc</a>
+        </h1>
+        <div class="search">
+          <input class="query" type="text" placeholder="Busque por nome ou atributo do funcionário">
+        </div>
+      </div>
     </div>
-
-  <script type="text/javascript">
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-36022391-1']);
-    _gaq.push(['_trackPageview']);
-  
-    (function() {
-      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();
-  </script>
-	</body>
+    <div class="main">
+      <div class="wrapper">
+        <div id="table"></div>
+      </div>
+    </div>
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-36022391-1']);
+      _gaq.push(['_trackPageview']);
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+  </body>
 </html>
