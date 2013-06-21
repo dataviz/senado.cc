@@ -14,22 +14,26 @@
     <script type="text/javascript" language="javascript" src="js/senado.js"></script>
   </head>
   <body>
-    <div class="header">
+    <header>
       <div class="header-bar"></div>
       <div class="wrapper">
         <h1 class="logo">
           <a href='/'>senado.cc</a>
         </h1>
-        <div class="search">
-          <input class="query" type="text" placeholder="Busque por nome ou atributo do funcionário">
-        </div>
+        <h3>Dados extraídos do portal de transparência do site do <a href="http://www.senado.gov.br/">Senado Federal do Brasil.</a> em setembro de 2012.</h3>
+        <p><a class="btn btn-large" href="/senado.csv">Download dos dados<br><small>Em formato .CSV [984k]</small></a> <a class="btn btn-large" href="https://github.com/dataviz/senado.cc">Projeto no GitHub<br><small>Feito em HTML5, CSS & JS</small></a></p>
       </div>
-    </div>
+    </header>
     <div class="main">
       <div class="wrapper">
         <div id="table"></div>
       </div>
     </div>
+    <footer>
+      <div class="wrapper">
+        <p>2013 · <a href="http://dataviz.com.br/">dataviz.com.br</a> · <a href="http://creativecommons.org/publicdomain/zero/1.0/"><b>Domínio Público</b></a></p>
+      </div>
+    </footer>
     <script type="text/javascript">
       var _gaq = _gaq || [];
       _gaq.push(['_setAccount', 'UA-36022391-1']);

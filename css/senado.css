@@ -11,12 +11,22 @@ select,
 textarea {
   font-family: Lato, sans-serif;
 }
+h1 {
+  padding-top: .5em;
+  font-weight: 300;
+}
 .wrapper {
   width: 90%;
   padding: 20px 0;
   margin: 0 auto;
 }
-
+.btn-large {
+  font-size: 1.5em;
+}
+a.btn-large small {
+  color: #666;
+  font-size: .75em;
+}
 .header {
   overflow: hidden;
 }
