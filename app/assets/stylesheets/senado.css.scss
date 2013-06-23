@@ -1,0 +1,53 @@
+body {
+  background-color: #eee;
+}
+body,
+label,
+input,
+select,
+textarea {
+  font-family: 'Source Sans Pro', sans-serif;
+}
+h1 {
+  padding-top: .5em;
+  font-weight: 900;
+}
+.wrapper {
+  width: 90%;
+  padding: 20px 0;
+  margin: 0 auto;
+}
+.btn-large {
+  font-size: 1.5em;
+}
+a.btn-large small {
+  color: #666;
+  font-size: .75em;
+}
+header {
+  overflow: hidden;
+  background-color: #00A859;
+  color: white;
+  h3 {
+    color: white;
+    a {
+      color: #FFCC29;
+    }
+  }
+}
+.logo {
+  margin: 0 auto;
+  font-size: 50px;
+  height: 50px;
+  width: 30%;
+  float: left;
+  a {
+    display: block;
+    color: white;
+  }
+}
+table {
+  th {
+    white-space: nowrap;
+  }
+}

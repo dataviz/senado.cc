@@ -1,0 +1,47 @@
+doctype html
+html
+  head
+    meta[http-equiv="content-type" content="text/html; charset=utf-8"]
+    title
+      | senado.cc
+    link[href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css']
+    = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
+    = javascript_include_tag "application", "data-turbolinks-track" => true
+    = csrf_meta_tags
+    link[rel="shortcut icon" type="image/ico" href="http://www.datatables.net/favicon.ico"]
+  body
+    header
+      .header-bar
+      .wrapper
+        h1.logo
+          = link_to 'senado.cc', root_path
+        h3
+          | Dados extraídos do portal de transparência do site do <a href="http://www.senado.gov.br/">Senado Federal do Brasil</a> em setembro de 2012.
+        p
+          a.btn.btn-large[href="/senado.csv"]
+            | Download dos dados
+            br
+            small
+              | Em formato .CSV [984k]
+          = " "
+          a.btn.btn-large[href="https://github.com/dataviz/senado.cc"]
+            | Projeto no GitHub
+            br
+            small
+              | Feito em HTML5, CSS & JS
+    #main
+      .wrapper
+        == yield
+    footer
+      .wrapper
+        p
+          | #{Time.new.year} · <a href="http://dataviz.com.br/">dataviz.com.br</a> · <a href="http://creativecommons.org/publicdomain/zero/1.0/"><b>Domínio Público</b></a>
+    javascript:
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-36022391-1']);
+      _gaq.push(['_trackPageview']);
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
