@@ -1,6 +1,6 @@
 module Senado
   BASE_URL = 'http://www.senado.gov.br/senadores/'
-  SENADOR_URL = 'dinamico/paginst/senador'
+  SENADOR_URL = BASE_URL + 'dinamico/paginst/senador'
 
   SENADORES = {"4981" => "Acir Gurgacz (PDT-RO)", "391" => "Aécio Neves (PSDB-MG)", "4527" => "Alfredo Nascimento (PR-AM)",
              "846" => "Aloysio Nunes Ferreira (PSDB-SP)", "945" => "Alvaro Dias (PSDB-PR)", "4988" => "Ana Amélia (PP-RS)",

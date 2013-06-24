@@ -1,0 +1,31 @@
+#!/usr/bin/env ruby
+require 'nokogiri'
+require 'open-uri'
+require 'csv'
+require_relative 'utils/senado_page_utils'
+
+puts 'Coletando dados de Senadores: '
+
+sen_data = []
+i = 0
+Senado::SENADORES.each_pair do |senador, name|
+  puts "- #{name}"
+  doc = Nokogiri::HTML(open("#{Senado::SENADOR_URL}#{senador}a.asp"))
+  name = doc.css('.tituloSenadores div').first.text
+
+  dados = {}
+  dados_dom = doc.css('.dadosSenador').first
+  dados_dom.children.select{|c| c.text.strip.size > 0 }.each_slice(2) do |pair|
+    value = pair.count == 1 ? '' : pair[1].text.strip
+    dados[pair[0].text.strip.gsub(':', '')] = value
+  end
+  sen_data << dados.keys if i == 0
+  sen_data << dados.values
+  i +=1
+end
+
+CSV.open(File.dirname(__FILE__) + "/../db/data/senadores.csv", "wb") do |csv|
+  sen_data.each do |senador|
+    csv << senador
+  end
+ end
