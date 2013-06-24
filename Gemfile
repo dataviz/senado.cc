@@ -28,3 +28,4 @@ gem 'jbuilder', '~> 1.2'
 
 
 gem 'unicorn'
+gem 'pg'

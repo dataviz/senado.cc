@@ -1,0 +1,7 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: senado_development
+  pool: 5
+  username: root
+  password:
