@@ -1,3 +1,5 @@
+$green: #00A859;
+$yellow: #FFCC29;
 body {
   background-color: #eee;
 }
@@ -12,42 +14,132 @@ h1 {
   padding-top: .5em;
   font-weight: 900;
 }
+a,
+a:link,
+a:visited {
+  text-decoration: none;
+  color: #09d;
+  &:hover {
+    text-decoration: underline;
+  }
+  &.btn:hover {
+    text-decoration: none;
+  }
+}
 .wrapper {
-  width: 90%;
-  padding: 20px 0;
+  width: 940px;
+  padding: 20px;
   margin: 0 auto;
 }
-.btn-large {
-  font-size: 1.5em;
+#main {
+  .wrapper {
+    background: white;
+  }
+  img {
+    width: 100%;
+  }
 }
 a.btn-large small {
   color: #666;
   font-size: .75em;
 }
-header {
+header.header {
   overflow: hidden;
-  background-color: #00A859;
+  background-color: $green;
+  background-image: url(/assets/header-background.png);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-attachment: fixed;
   color: white;
+  a,
+  a:link,
+  a:visited {
+    color: $yellow;
+  }
   h3 {
     color: white;
+  }
+  .btn.btn-large {
+    background: white;
+    color: $green;
+    display: inline-block;
+    text-decoration: none;
+    padding: .25em .5em;
+    margin-left: .5em;
+  }
+  .menu {
+    background-color: $green;
+  }
+  nav {
+    float: left;
     a {
-      color: #FFCC29;
+      text-decoration: none;
+      font-weight: 700;
+      margin-right: 1em;
+      line-height: 3em;
     }
+  }
+  .ctas {
+    float: right;
   }
 }
 .logo {
-  margin: 0 auto;
+  margin: 2em auto;
   font-size: 50px;
-  height: 50px;
-  width: 30%;
-  float: left;
   a {
     display: block;
     color: white;
+    text-decoration: none;
   }
 }
 table {
   th {
     white-space: nowrap;
   }
+}
+footer.footer {
+  text-align: center;
+  color: #888;
+  a,
+  a:link,
+  a:visited {
+    color: $green;
+  }
+}
+
+.profile {
+  header {
+    overflow: hidden;
+  }
+  .profile-avatar {
+    width: 128px;
+    height: 128px;
+    background-size: cover;
+    border-radius: 100%;
+    float: left;
+    background-color: #CCC;
+    box-shadow: #CCC 0 0 0 1px;
+    margin: 2px 1em 2px 2px;
+  }
+  .profile-name {
+    margin: 0;
+  }
+  .profile-age {
+    display: inline-block;
+    margin-right: 1em;
+  }
+  .profile-party {
+    background-color: #3E4095;
+    color: white;
+    border-radius: 3px;
+    display: inline-block;
+    line-height: 1;
+    margin: 0;
+    padding: .25em .5em;
+    font-size: 1em;
+    font-weight: 400;
+  }
+}
+.clear {
+  clear: both;
 }

@@ -10,32 +10,36 @@ html
     = csrf_meta_tags
     link[rel="shortcut icon" type="image/ico" href="http://www.datatables.net/favicon.ico"]
   body
-    header
-      .header-bar
+    header.header
       .wrapper
         h1.logo
           = link_to 'senado.cc', root_path
         h3
-          | Dados extraídos do portal de transparência do site do <a href="http://www.senado.gov.br/">Senado Federal do Brasil</a> em setembro de 2012.
-        p
-          a.btn.btn-large[href="/senado.csv"]
-            | Download dos dados
-            br
-            small
-              | Em formato .CSV [984k]
-          = " "
-          a.btn.btn-large[href="https://github.com/dataviz/senado.cc"]
-            | Projeto no GitHub
-            br
-            small
+          | Aplicativo de visualização de dados extraídos do portal de transparência do <a href="http://www.senado.gov.br/">Senado Federal do Brasil</a>.
+      .menu
+        .wrapper
+          nav
+            = link_to 'Renan Calheiros', profile_path
+            = link_to 'Nova Home', new_path
+          .ctas
+            a.btn.btn-large[href="/senado.csv"]
+              | Download dos dados
+              br
+              small
+                | Em formato .CSV [984k]
+            a.btn.btn-large[href="https://github.com/dataviz/senado.cc"]
+              | Projeto no GitHub
+              br
+              small
               | Feito em HTML5, CSS & JS
+          .clear
     #main
       .wrapper
         == yield
-    footer
+    footer.footer
       .wrapper
         p
-          | #{Time.new.year} · <a href="http://dataviz.com.br/">dataviz.com.br</a> · <a href="http://creativecommons.org/publicdomain/zero/1.0/"><b>Domínio Público</b></a>
+          | #{Time.new.year} · <a target="_blank" href="http://dataviz.com.br/">dataviz.com.br</a> · <a href="http://creativecommons.org/publicdomain/zero/1.0/" target="_blank"><b>Domínio Público</b></a>
     javascript:
       var _gaq = _gaq || [];
       _gaq.push(['_setAccount', 'UA-36022391-1']);
