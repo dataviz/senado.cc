@@ -1,0 +1,14 @@
+#!/usr/bin/env ruby
+require 'open-uri'
+
+require_relative 'utils/senado_page_utils'
+
+puts "Carregando foto dos Senadores..."
+Senado::SENADORES.keys.each do |sen_id|
+  File.open(File.dirname(__FILE__) + "/../public/images/#{sen_id}.jpg", "wb") do |img_file|
+    open(Senado::BASE_URL + "img/fotos/bemv#{sen_id}.jpg", 'rb') do |read_file|
+      img_file.write(read_file.read)
+    end
+  end
+  puts sen_id
+end
