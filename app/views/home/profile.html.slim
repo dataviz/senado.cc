@@ -1,47 +1,47 @@
 .profile
-  .profile-info.card
-    .profile-info
-      header
+  .container
+    .row
+      .span3
         .profile-avatar[style='background-image:url(http://www.senado.gov.br/senadores/img/fotos/bemv70.jpg)']
+      .span9.last
         h1.profile-name
           | Renan Calheiros
         .profile-age
           | 58 anos
         .profile-party
           | PMDB/AL
-      .profile-contact
-        h2
-          | Contato
-        dl
-          dt
-            | Email
-          dd.emal
-            = mail_to 'renan.calheiros@senador.gov.br'
-          dt
-            | Telefones
-          dd.phone
-            | (61) 3303-2261/2263
-          dt
-            | Fax
-          dd.fax
-            | (61) 3303-1695
-      footer
-        h3
-          | Endereço
-        address.address
-          | Anexo I - 15º andar
-      /
-        | Naturalidade:
-        | Murici (AL)
-  .tenure
-    h3
-      | Mandato
-    p
-      | 54º 2011 — 2015
-      br
-      | 55º 2016 — 2019
-
-  .leadership
-    h3
-      | Lideranças
-    = image_tag 'proto/graph-leadership.png'
+        .profile-birthplace
+          | Naturalidade: Murici (AL)
+        .profile-contact
+          h2
+            | Contato
+          dl
+            dt
+              | Email
+            dd.emal
+              = mail_to 'renan.calheiros@senador.gov.br'
+            dt
+              | Telefones
+            dd.phone
+              | (61) 3303-2261/2263
+            dt
+              | Fax
+            dd.fax
+              | (61) 3303-1695
+          h3
+            | Endereço
+          address.address
+            | Anexo I - 15º andar
+        .tenure
+          h3
+            | Mandato
+          p
+            | 54º 2011 — 2015
+            br
+            | 55º 2016 — 2019
+.graphs
+  .container
+    .leadership
+      h3
+        | Lideranças
+      = image_tag 'proto/graph-leadership.png'

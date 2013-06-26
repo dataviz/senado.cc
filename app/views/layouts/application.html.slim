@@ -4,40 +4,25 @@ html
     meta[http-equiv="content-type" content="text/html; charset=utf-8"]
     title
       | senado.cc
-    link[href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css']
+    link[href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,700,400italic,900italic' rel='stylesheet' type='text/css']
     = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
-    = javascript_include_tag "application", "data-turbolinks-track" => true
+    /= javascript_include_tag "application", "data-turbolinks-track" => true
     = csrf_meta_tags
     link[rel="shortcut icon" type="image/ico" href="http://www.datatables.net/favicon.ico"]
   body
     header.header
-      .wrapper
+      .container
         h1.logo
           = link_to 'senado.cc', root_path
-        h3
-          | Aplicativo de visualização de dados extraídos do portal de transparência do <a href="http://www.senado.gov.br/">Senado Federal do Brasil</a>.
-      .menu
-        .wrapper
+        .menu.pull-right
           nav
-            = link_to 'Renan Calheiros', profile_path
-            = link_to 'Nova Home', new_path
-          .ctas
-            a.btn.btn-large[href="/senado.csv"]
-              | Download dos dados
-              br
-              small
-                | Em formato .CSV [984k]
-            a.btn.btn-large[href="https://github.com/dataviz/senado.cc"]
-              | Projeto no GitHub
-              br
-              small
-              | Feito em HTML5, CSS & JS
-          .clear
-    #main
-      .wrapper
-        == yield
+            input.search[type='search' placeholder='buscar por senador']
+            = link_to 'Perfil', profile_path
+
+    .main
+      == yield
     footer.footer
-      .wrapper
+      .container
         p
           | #{Time.new.year} · <a target="_blank" href="http://dataviz.com.br/">dataviz.com.br</a> · <a href="http://creativecommons.org/publicdomain/zero/1.0/" target="_blank"><b>Domínio Público</b></a>
     javascript:

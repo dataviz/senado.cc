@@ -27,6 +27,9 @@ GEM
       tzinfo (~> 0.3.37)
     arel (4.0.0)
     atomic (1.1.9)
+    bootstrap-sass-rails (2.3.2.0)
+      railties (>= 3.1.0)
+      sass-rails (>= 3.1.0)
     builder (3.1.4)
     coffee-rails (4.0.0)
       coffee-script (>= 2.2.0)
@@ -118,6 +121,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bootstrap-sass-rails
   coffee-rails (~> 4.0.0)
   jbuilder (~> 1.2)
   jquery-rails

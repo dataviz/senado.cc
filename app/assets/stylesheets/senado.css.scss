@@ -1,8 +1,14 @@
 $green: #00A859;
 $yellow: #FFCC29;
+$blue: #3E4095;
+$cloud: #ECF0F1;
+$link: #3498DB;
+$silver: #BDC3C7;
+
 body {
-  background-color: #eee;
+  background-color: $silver;
 }
+
 body,
 label,
 input,
@@ -10,116 +16,100 @@ select,
 textarea {
   font-family: 'Source Sans Pro', sans-serif;
 }
-h1 {
-  padding-top: .5em;
-  font-weight: 900;
-}
-a,
-a:link,
-a:visited {
+
+a:hover {
   text-decoration: none;
-  color: #09d;
-  &:hover {
-    text-decoration: underline;
-  }
-  &.btn:hover {
-    text-decoration: none;
-  }
 }
-.wrapper {
-  width: 940px;
-  padding: 20px;
-  margin: 0 auto;
+
+img {
+  max-width: 100%;
 }
-#main {
-  .wrapper {
-    background: white;
-  }
-  img {
-    width: 100%;
-  }
-}
-a.btn-large small {
-  color: #666;
-  font-size: .75em;
-}
-header.header {
-  overflow: hidden;
-  background-color: $green;
-  background-image: url(/assets/header-background.png);
-  background-repeat: no-repeat;
-  background-size: 100%;
-  background-attachment: fixed;
-  color: white;
-  a,
-  a:link,
-  a:visited {
-    color: $yellow;
-  }
-  h3 {
-    color: white;
-  }
-  .btn.btn-large {
-    background: white;
-    color: $green;
-    display: inline-block;
-    text-decoration: none;
-    padding: .25em .5em;
-    margin-left: .5em;
-  }
-  .menu {
-    background-color: $green;
-  }
-  nav {
-    float: left;
-    a {
-      text-decoration: none;
-      font-weight: 700;
-      margin-right: 1em;
-      line-height: 3em;
-    }
-  }
-  .ctas {
-    float: right;
-  }
-}
+
 .logo {
-  margin: 2em auto;
-  font-size: 50px;
-  a {
-    display: block;
-    color: white;
-    text-decoration: none;
-  }
+  float: left;
+  margin: .5em 0;
 }
-table {
-  th {
-    white-space: nowrap;
+
+.header {
+  background: $green;
+  .menu {
+    padding: 1em 0;
+    font-weight: 700;
+    font-size: 1.25em;
   }
-}
-footer.footer {
-  text-align: center;
-  color: #888;
-  a,
-  a:link,
-  a:visited {
-    color: $green;
+  .search {
+    margin-right: 1em;
+    border: none;
+    border-radius: 0;
+    background: $cloud;
+    box-shadow: none;
+    font-size: 1em;
+    font-weight: 400;
+    padding: .35em .5em .35em .5em;
+    line-height: 1.5em;
+    margin-top: .25em;
+    &:focus,
+    &:hover  {
+      background: white;
+    }
   }
 }
 
-.profile {
-  header {
-    overflow: hidden;
+.header a,
+.showcase a {
+  color: $yellow;
+  &:hover {
+    color: white;
   }
+}
+
+.footer {
+  padding: 3em 0;
+  text-align: center;
+  color: #888;
+}
+
+.showcase {
+  background-color: $green;
+  background-image: url(/assets/senado.png);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-attachment: fixed;
+  padding: 6em 0;
+  h3 {
+    margin: 0;
+    font-size: 3em;
+    line-height: 1.3em;
+    color: white;
+    font-weight: 200;
+    margin-right: 1em;
+  }
+  .btn {
+    background: $green;
+    margin-bottom: 2em;
+    &:hover {
+      background: lighten($green, 5%);
+    }
+  }
+}
+
+.what-is-and-what-it-does {
+  padding: 3em 0;
+  background: $cloud;
+}
+
+.graphs,
+.profile {
+  padding: 3em 0;
+  background: white;
+}
+
+.profile {
   .profile-avatar {
     width: 128px;
     height: 128px;
     background-size: cover;
     border-radius: 100%;
-    float: left;
-    background-color: #CCC;
-    box-shadow: #CCC 0 0 0 1px;
-    margin: 2px 1em 2px 2px;
   }
   .profile-name {
     margin: 0;
@@ -129,7 +119,7 @@ footer.footer {
     margin-right: 1em;
   }
   .profile-party {
-    background-color: #3E4095;
+    background: $blue;
     color: white;
     border-radius: 3px;
     display: inline-block;
@@ -140,6 +130,17 @@ footer.footer {
     font-weight: 400;
   }
 }
-.clear {
-  clear: both;
+
+
+/* BOOTSTRAP */
+.btn {
+  border: none;
+  border-radius: 0;
+  background: $cloud;
+  box-shadow: none;
+  text-shadow: none;
+  &:hover {
+    background: white;
+  }
 }
+
