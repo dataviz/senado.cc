@@ -19,12 +19,13 @@ Senado::SENADORES.each_pair do |senador, name|
     value = pair.count == 1 ? '' : pair[1].text.strip
     dados[pair[0].text.strip.gsub(':', '')] = value
   end
+  dados.merge!({id: senador})
   sen_data << dados.keys if i == 0
   sen_data << dados.values
   i +=1
 end
 
-CSV.open(File.dirname(__FILE__) + "/../db/data/senadores.csv", "wb") do |csv|
+CSV.open(File.dirname(__FILE__) + "/../public/data/senadores.csv", "wb") do |csv|
   sen_data.each do |senador|
     csv << senador
   end

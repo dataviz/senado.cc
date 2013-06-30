@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130630190044) do
+ActiveRecord::Schema.define(version: 20130630205720) do
 
   create_table "senadores", force: true do |t|
     t.string   "nome"
@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 20130630190044) do
     t.string   "email"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "id_original"
   end
 
   add_index "senadores", ["nome"], name: "index_senadores_on_nome", unique: true
