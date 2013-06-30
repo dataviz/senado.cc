@@ -30,3 +30,5 @@ gem 'unicorn'
 gem 'pg'
 
 gem 'bootstrap-sass-rails'
+
+gem 'sqlite3', group: [:development, :test]
