@@ -3,10 +3,10 @@ source 'https://rubygems.org'
 ruby '2.0.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.0.0.rc2'
+gem 'rails', '4.0.0'
 
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 4.0.0.rc2'
+gem 'sass-rails', '~> 4.0.0'
 
 # Use Slim for html abstraction
 gem 'slim-rails'
@@ -27,8 +27,8 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 
 gem 'unicorn'
-gem 'pg'
 
 gem 'bootstrap-sass-rails'
 
 gem 'sqlite3', group: [:development, :test]
+gem 'pg', group: :production
