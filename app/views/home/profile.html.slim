@@ -5,13 +5,13 @@
         .profile-avatar[style='background-image:url(http://www.senado.gov.br/senadores/img/fotos/bemv70.jpg)']
       .span9.last
         h1.profile-name
-          = @senador.nome
+          | Renan Calheiros
         .profile-age
-          = "#{@senador.idade} anos"
+          | 58 anos
         .profile-party
-          = "#{@senador.partido}/#{@senador.uf}"
+          | PMDB/AL
         .profile-birthplace
-          = "Naturalidade: #{@senador.naturalidade}"
+          | Naturalidade: Murici (AL)
         .profile-contact
           h2
             | Contato
@@ -19,19 +19,19 @@
             dt
               | Email
             dd.emal
-              = mail_to @senador.email
+              = mail_to 'renan.calheiros@senador.gov.br'
             dt
               | Telefones
             dd.phone
-              = @senador.telefone
+              | (61) 3303-2261/2263
             dt
               | Fax
             dd.fax
-              = @senador.fax
+              | (61) 3303-1695
           h3
             | Endereço
           address.address
-            = @senador.endereco
+            | Anexo I - 15º andar
         .tenure
           h3
             | Mandato
