@@ -1,16 +1,12 @@
 development:
-  adapter: postgresql
-  encoding: unicode
-  database: senado-cc_development
-  host: localhost
+  adapter: sqlite3
+  database: db/development.sqlite3
   pool: 5
   timeout: 5000
 
 test:
-  adapter: postgresql
-  encoding: unicode
-  database: senado-cc_test
-  host: localhost
+  adapter: sqlite3
+  database: db/test.sqlite3
   pool: 5
   timeout: 5000
 

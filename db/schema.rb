@@ -11,9 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20130630190044) do
 
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
+  create_table "senadores", force: true do |t|
+    t.string   "nome"
+    t.date     "nascimento"
+    t.string   "partido"
+    t.string   "uf"
+    t.string   "naturalidade"
+    t.string   "endereco"
+    t.string   "telefone"
+    t.string   "fax"
+    t.string   "email"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "senadores", ["nome"], name: "index_senadores_on_nome", unique: true
 
 end

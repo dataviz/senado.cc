@@ -27,6 +27,8 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 
 gem 'unicorn'
-gem 'pg'
 
 gem 'bootstrap-sass-rails'
+
+gem 'sqlite3', group: [:development, :test]
+gem 'pg', group: :production

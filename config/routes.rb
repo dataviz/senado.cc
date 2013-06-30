@@ -2,6 +2,6 @@ SenadoCc::Application.routes.draw do
 
   root 'home#index'
 
-  get '/profile' => 'home#profile'
+  get '/:id' => 'senador#show', as: :senador
 
 end
