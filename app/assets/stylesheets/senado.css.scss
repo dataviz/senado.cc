@@ -70,11 +70,11 @@ img {
 }
 
 .showcase {
+  background-attachment: fixed;
   background-color: $green;
   background-image: url(/assets/senado.png);
+  background-position: center -140px;
   background-repeat: no-repeat;
-  background-size: 100%;
-  background-attachment: fixed;
   padding: 6em 0;
   h3 {
     margin: 0;
