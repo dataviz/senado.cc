@@ -1,9 +1,15 @@
 $green: #00A859;
 $yellow: #FFCC29;
 $blue: #3E4095;
-$cloud: #ECF0F1;
+$clouds: #ECF0F1;
 $link: #3498DB;
 $silver: #BDC3C7;
+
+@mixin border-box {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
 
 body {
   background-color: $silver;
@@ -41,7 +47,7 @@ img {
     margin-right: 1em;
     border: none;
     border-radius: 0;
-    background: $cloud;
+    background: $clouds;
     box-shadow: none;
     font-size: 1em;
     font-weight: 400;
@@ -95,7 +101,57 @@ img {
 
 .what-is-and-what-it-does {
   padding: 3em 0;
-  background: $cloud;
+  background: $clouds;
+}
+
+.senators-list {
+  background: $clouds;
+  .senators {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+  }
+}
+.senator {
+  @include border-box;
+  width: 230px;
+  display: inline-block;
+  margin: 0 10px 20px;
+  vertical-align: top;
+  a {
+    background: $green;
+    border-radius: 4px;
+    box-shadow: $silver 0 2px 0;
+    display: block;
+    padding-top: 10px;
+    text-align: center;
+  }
+  .senator-image {
+    background-attachment: scroll;
+    background-color: $clouds;
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    border-radius: 50%;
+    box-shadow: $silver 0 2px 0;
+    display: inline-block;
+    height: 128px;
+    margin-bottom: -64px;
+    width: 128px;
+  }
+  .senator-info {
+    padding: 5em 10px 10px;
+    background: white;
+    height: 4em;
+    border-radius: 0 0 4px 4px;
+  }
+  .senator-name {
+    font-size: 1.25em;
+    font-weight: bold;
+  }
+  .senator-party-and-uf {
+  }
 }
 
 .graphs,
@@ -136,7 +192,7 @@ img {
 .btn {
   border: none;
   border-radius: 0;
-  background: $cloud;
+  background: $clouds;
   box-shadow: none;
   text-shadow: none;
   &:hover {

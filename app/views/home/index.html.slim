@@ -16,6 +16,7 @@
             br
             small
               | Feito em HTML5, CSS & JS
+
 .what-is-and-what-it-does
   .container
     .span6
@@ -28,3 +29,16 @@
         | Para que serve o Senado?
       p
         | Explicar de maneira simples para o que serve
+
+.senators-list
+  ul.senators
+    - @senators.each_with_index do |senator, i|
+      li.senator
+        a[href=i+1]
+          .senator-image[style="background-image: url(/assets/senators/#{senator.id}.jpg)"]
+          .senator-info
+            .senator-name
+              = senator.nome
+            .senator-party-and-uf
+              | #{senator.partido}/#{senator.uf}
+
