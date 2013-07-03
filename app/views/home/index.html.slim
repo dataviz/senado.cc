@@ -35,7 +35,7 @@
     - @senators.each_with_index do |senator, i|
       li.senator
         a[href=i+1]
-          .senator-image[style="background-image: url(/assets/senators/#{senator.id}.jpg)"]
+          .senator-image[style="background-image: url(/assets/senators/#{senator.id_original}.jpg)"]
           .senator-info
             .senator-name
               = senator.nome
