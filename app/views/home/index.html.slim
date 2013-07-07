@@ -30,7 +30,72 @@
       p
         | Explicar de maneira simples para o que serve
 
+
 .senators-list
+  .container
+    h2
+      | Lista de servidores por senador(a)
+    table.table.senators
+      thead
+        tr
+          th
+          th
+            | Senador(a)
+          th
+            | Servidores 
+            br
+            small
+              | (absoluto)
+          th
+            | Servidores
+            br
+            small
+              | (em %)
+          th
+            | Total Salários
+            br
+            small
+              | (em Milhões de R$)
+          th
+            | Salários
+            br
+            small
+              | (em %)
+      tbody
+        - @senators.each do |senator|
+          tr.senator
+            td.senator-avatar
+              a[href="/#{senator.nome.gsub(' ','-').downcase}"]
+                .senator-image[style="background-image: url(/assets/senators/#{senator.id_original}.jpg)"]
+            td.senator-info
+              a[href="/#{senator.nome.gsub(' ','-').downcase}"]
+                .senator-name
+                  | #{senator.nome}
+                .senator-party-and-uf
+                  | #{senator.partido}/#{senator.uf}
+            td.servants-count
+              | ##
+            td.servants-percentual
+              | ##%
+            td.servants-salary-sum
+              | ###
+            td.servants-percentual-salary
+              | ##%
+      tfoot
+        tr.senator
+          td.senator-info[colspan=2]
+            strong
+              | #{@senators.count} senadores
+          td.servants-count
+            | #.###
+          td.servants-percentual
+            | 100%
+          td.servants-salary-sum
+            | R$ #.###.###.###,##
+          td.servants-percentual-salary
+            | 100%
+
+/
   ul.senators
     - @senators.each_with_index do |senator, i|
       li.senator

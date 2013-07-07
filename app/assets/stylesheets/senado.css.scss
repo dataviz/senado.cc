@@ -105,27 +105,29 @@ img {
 }
 
 .senators-list {
-  background: $clouds;
-  .senators {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    text-align: center;
-  }
+  background: white;
 }
 .senator {
-  @include border-box;
-  width: 230px;
-  display: inline-block;
-  margin: 0 10px 20px;
-  vertical-align: top;
-  a {
-    background: $green;
-    border-radius: 4px;
-    box-shadow: $silver 0 2px 0;
-    display: block;
-    padding-top: 10px;
+  &:hover {
+    td {
+      background: #EEE;
+    }
+  }
+  td {
+    vertical-align: middle;
     text-align: center;
+    margin: 0;
+    padding: .25em;
+  }
+  a {
+    display: block;
+  }
+  .senator-info {
+    text-align: left;
+  }
+  .senator-image {
+    display: inline-block;
+    vertical-align: middle;
   }
   .senator-image {
     background-attachment: scroll;
@@ -134,23 +136,23 @@ img {
     background-repeat: no-repeat;
     background-size: 100%;
     border-radius: 50%;
-    box-shadow: $silver 0 2px 0;
-    display: inline-block;
-    height: 128px;
-    margin-bottom: -64px;
-    width: 128px;
-  }
-  .senator-info {
-    padding: 5em 10px 10px;
-    background: white;
-    height: 4em;
-    border-radius: 0 0 4px 4px;
+    margin-right: 1em;
+    height: 48px;
+    width: 48px;
   }
   .senator-name {
-    font-size: 1.25em;
-    font-weight: bold;
+    font-weight: 700;
   }
-  .senator-party-and-uf {
+  .servants-count,
+  .servants-percentual,
+  .servants-percentual-salary {
+    font-size: 2em;
+    font-weight: 900;
+  }
+  .servants-salary-sum {
+    font-family: 'Menlo', 'Andale Mono', monospace;
+    font-weight: bold;
+    text-align: right;
   }
 }
 
