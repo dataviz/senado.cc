@@ -1,28 +1,37 @@
-== README
+== Senado.cc
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Aplicativo para republicação e visualização dos dados do portal de transparência do Senado Federal do Brasil.
 
-Things you may want to cover:
+=== Dados Técnicos
 
-* Ruby version
+A aplicação está sendo desenvolvida com as seguintes ferramentas e versões:
 
-* System dependencies
+* Ruby 2.0
 
-* Configuration
+* Rails 4.0
 
-* Database creation
+* SQlite
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Tentamos ao máximo manter a aplicação e suas dependências simples, tornando ela mais fácil de ser reutilizada. Utilizamos vanilla SQL, tornando fácil a substituição do banco de dados por um de sua preferência.
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+=== Instalação
+
+1) Clone este repositório:
+
+git clone git@github.com:dataviz/senado.cc.git
+
+2)Instale as dependências:
+
+bundle install
+
+3)Rode as migrações do banco de dados
+
+rake db:migrate
+
+4)Inicie a aplicação
+
+rails s
+
+--
+2013 · dataviz.com.br · Domínio Público
