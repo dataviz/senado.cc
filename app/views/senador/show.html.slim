@@ -1,11 +1,11 @@
 .profile
   .container
     .row
-      .span3
-        .profile-avatar[style='background-image:url(http://www.senado.gov.br/senadores/img/fotos/bemv70.jpg)']
-      .span9.last
+      .span2
+        .profile-avatar[style="background-image:url(/assets/senators/#{@senador.id_original}.jpg)"]
+      .span10.last
         h1.profile-name
-          = @senador.nome
+          = @senador.alcunha
         .profile-age
           = "#{@senador.idade} anos"
         .profile-party

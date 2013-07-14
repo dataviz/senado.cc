@@ -1,0 +1,16 @@
+#!/usr/bin/env ruby
+require 'nokogiri'
+require 'open-uri'
+require 'csv'
+require_relative 'utils/senado_page_utils'
+
+puts 'Coletando dados de Senadores: '
+
+sen_data = []
+i = 0
+Senado::SENADORES.each_pair do |senador, name|
+  doc = Nokogiri::HTML(open("#{Senado::SENADOR_URL}#{senador}a.asp"))
+  name = doc.css('.tituloSenadores div').first.text
+  name = name.gsub(/Senadora|Senador/, '').strip
+  puts name.inspect
+end

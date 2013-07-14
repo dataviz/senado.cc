@@ -32,3 +32,6 @@ gem 'bootstrap-sass-rails'
 
 gem 'sqlite3', group: [:development, :test]
 gem 'pg', group: :production
+
+# App monitoring
+gem 'newrelic_rpm'
