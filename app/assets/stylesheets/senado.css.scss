@@ -231,19 +231,13 @@ img {
   .category-1,
   .category-2,
   .category-3,
-  .category-4,
-  .category-5,
-  .category-6,
-  .category-7 {
+  .category-4 {
     border-right: .5em solid white;
   }
-  .category-1 { border-right-color: darken($red, 30%);  }
-  .category-2 { border-right-color: darken($red, 20%);  }
-  .category-3 { border-right-color: darken($red, 10%);  }
-  .category-4 { border-right-color: $red;               }
-  .category-5 { border-right-color: lighten($red, 10%); }
-  .category-6 { border-right-color: lighten($red, 20%); }
-  .category-7 { border-right-color: lighten($red, 30%); }
+  .category-1 { border-right-color:         $red      ; }
+  .category-2 { border-right-color: lighten($red, 10%); }
+  .category-3 { border-right-color: lighten($red, 20%); }
+  .category-4 { border-right-color: lighten($red, 30%); }
 }
 
 .graphs,

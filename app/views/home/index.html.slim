@@ -127,7 +127,7 @@
                 .meter-bar[style="width: #{@y}%"]
                 .meter-label
                   | #{@x.round(2)}%
-            td.servants-salaries[class="category-#{(rand*6).to_i + 1}"]
+            td.servants-salaries[class="category-#{(rand*4).to_i + 1}"]
               span.servants-salaries-sum>
                 | #{(rand*453).to_i + 1} mi
               small.salaries-standard-deviation[title='Desvio padrão']
@@ -148,16 +148,3 @@
             | 6.283 servidores
             span.servants-salary-sum
               | R$ 3.671.367.050,00
-
-/
-  ul.senators
-    - @senators.each_with_index do |senator, i|
-      li.senator
-        a[href=i+1]
-          .senator-image[style="background-image: url(/assets/senators/#{senator.id_original}.jpg)"]
-          .senator-info
-            .senator-name
-              = senator.nome
-            .senator-party-and-uf
-              | #{senator.partido}/#{senator.uf}
-
