@@ -19,17 +19,17 @@
 
 .what-is-and-what-it-does
   .container
-    .span6
-      h2
-        | O que é o Senado?
-      p
-        | Parágrafo explicando o que é de maneira simples
-    .span-6
-      h2
-        | Para que serve o Senado?
-      p
-        | Explicar de maneira simples para o que serve
-
+    .row
+      .span6
+        h2
+          | O que é o Senado?
+        p
+          | Parágrafo explicando o que é de maneira simples
+      .span-6
+        h2
+          | Para que serve o Senado?
+        p
+          | Explicar de maneira simples para o que serve
 
 .senators-list
   .container
@@ -41,54 +41,67 @@
           .box
             h3
               | Média de servidores
-              br
               small
-                | por gabinete
-            p
+                | (servidores por gabinete)
+            p.value
               | 34
-            p
-              | Desvio padrão: 5
+              small.standard-deviation<[title='Desvio padrão']
+                | (σ ± 5)
+            p.info
+              | Maior: 84 (Gabinete de Fulano de Tal)
+              br
+              | Menor: 2 (Gabinete de Circlano de Tal)
         .span4
           .box
             h3
               | Média de salários
-              br
               small
-                | (por gabinete)
-            p
-              | R$ 16 mil
-            p
-              | Desvio padrão: R$ 5 mil
+                | (R$ por servidor)
+            p.value
+              | 16 mil
+              small.standard-deviation<[title='Desvio padrão']
+                | (σ ± 5 mil)
+            p.info
+              | Teto de R$ 28 mil
+              br
+              | Maior: R$ 28 mil (10 servidores)
+              br
+              | Menor: R$ 800 (30 servidores)
         .span4
           .box
             h3
-              | Número de
-            p
-            p
-              | Desvio padrão: 
+              | Indicador
+              small
+                | (descrição)
+            p.value
+              | Valor
+              small.standard-deviation<[title='Desvio padrão']
+                | (σ ± desvio)
+            p.info
+              | Informações adicionais
     table.table.senators
       thead
+        tr
+          th[colspan=3]
+            | Senador
+          th[colspan=2]
+            | Gabinete
         tr
           th
           th
             | Senador(a)
           th
-            | Servidores
+            | Salário
+          th
+            | Número de Servidores
             br
             small
-              | (absoluto)
+              | (absoluto / em percentual e desvio padrão)
           th
-            | Servidores
+            | Salários dos servidores
             br
             small
-              | (em %)
-          th
-            | Custo anual salários
-          th
-            | Salários
-            br
-            small
-              | (em %)
+              | (absoluto / em percentual do total e desvio padrão)
       tbody
         - @senators.each do |senator|
           tr.senator
@@ -101,37 +114,40 @@
                   | #{senator.alcunha}
                 .senator-party-and-uf
                   | #{senator.partido}/#{senator.uf}
+            td.senator-salary
+              | R$ #{24 + (rand*4).to_i} mil
             td.servants-count
-              | #{(rand*78).to_i+1}
-            td.servants-percentual
+              span.servants-count-value>
+                | #{(rand*78).to_i+1}
+              small.servants-count-standard-deviation[title='Desvio padrão']
+                | (σ = #{(rand*1).to_i == 0 ? '+' : '-'} #{(rand*5).to_i})
               .meter-wrapper
                 - @x = rand * 2
                 - @y = (@x * 100).to_i
-                span.meter-bar[style="width: #{@y}%"]
-                span.meter-label
+                .meter-bar[style="width: #{@y}%"]
+                .meter-label
                   | #{@x.round(2)}%
-            td.servants-salary-sum[class="category-#{(rand*6).to_i + 1}"]
-              | R$ #{(rand*453).to_i + 1} mi
-            td.servants-percentual-salary
-              .meter-wrapper
-                - @x = rand * 2
-                - @y = (@x * 100).to_i
-                span.meter-bar[style="width: #{@y}%"]
-                span.meter-label
-                  | #{@x.round(2)}%
+            td.servants-salaries[class="category-#{(rand*6).to_i + 1}"]
+              span.servants-salaries-sum>
+                | #{(rand*453).to_i + 1} mi
+              small.salaries-standard-deviation[title='Desvio padrão']
+                | (σ = #{(rand*1).to_i == 0 ? '+' : '-'} #{(rand*5).to_i} mi)
+              .servants-salaries-percentual
+                .meter-wrapper
+                  - @x = rand * 2
+                  - @y = (@x * 100).to_i
+                  .meter-bar[style="width: #{@y}%"]
+                  .meter-label
+                    | #{@x.round(2)}%
       tfoot
         tr.senator
-          td.senator-info[colspan=2]
+          td.senator-info[colspan=3]
             strong
               | #{@senators.count} senadores
-          td.servants-count
-            | 6.283
-          td.servants-percentual
-            | 100%
-          td.servants-salary-sum
-            | R$ 3.671.367.050,00
-          td.servants-percentual-salary
-            | 100%
+          td.servants-count[colspan=2]
+            | 6.283 servidores
+            span.servants-salary-sum
+              | R$ 3.671.367.050,00
 
 /
   ul.senators
