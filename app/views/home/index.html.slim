@@ -34,7 +34,38 @@
 .senators-list
   .container
     h2
-      | Lista de servidores por senador(a)
+      | Servidores por gabinete
+    .monitor
+      .row
+        .span4
+          .box
+            h3
+              | Média de servidores
+              br
+              small
+                | por gabinete
+            p
+              | 34
+            p
+              | Desvio padrão: 5
+        .span4
+          .box
+            h3
+              | Média de salários
+              br
+              small
+                | (por gabinete)
+            p
+              | R$ 16 mil
+            p
+              | Desvio padrão: R$ 5 mil
+        .span4
+          .box
+            h3
+              | Número de
+            p
+            p
+              | Desvio padrão: 
     table.table.senators
       thead
         tr
@@ -42,7 +73,7 @@
           th
             | Senador(a)
           th
-            | Servidores 
+            | Servidores
             br
             small
               | (absoluto)
@@ -52,10 +83,7 @@
             small
               | (em %)
           th
-            | Total Salários
-            br
-            small
-              | (em Milhões de R$)
+            | Custo anual salários
           th
             | Salários
             br
@@ -65,33 +93,43 @@
         - @senators.each do |senator|
           tr.senator
             td.senator-avatar
-              a[href="/#{senator.nome.gsub(' ','-').downcase}"]
+              a[href="/#{senator.id_original}"]
                 .senator-image[style="background-image: url(/assets/senators/#{senator.id_original}.jpg)"]
             td.senator-info
-              a[href="/#{senator.nome.gsub(' ','-').downcase}"]
+              a[href="/#{senator.id_original}"]
                 .senator-name
                   | #{senator.alcunha}
                 .senator-party-and-uf
                   | #{senator.partido}/#{senator.uf}
             td.servants-count
-              | ##
+              | #{(rand*78).to_i+1}
             td.servants-percentual
-              | ##%
-            td.servants-salary-sum
-              | ###
+              .meter-wrapper
+                - @x = rand * 2
+                - @y = (@x * 100).to_i
+                span.meter-bar[style="width: #{@y}%"]
+                span.meter-label
+                  | #{@x.round(2)}%
+            td.servants-salary-sum[class="category-#{(rand*6).to_i + 1}"]
+              | R$ #{(rand*453).to_i + 1} mi
             td.servants-percentual-salary
-              | ##%
+              .meter-wrapper
+                - @x = rand * 2
+                - @y = (@x * 100).to_i
+                span.meter-bar[style="width: #{@y}%"]
+                span.meter-label
+                  | #{@x.round(2)}%
       tfoot
         tr.senator
           td.senator-info[colspan=2]
             strong
               | #{@senators.count} senadores
           td.servants-count
-            | #.###
+            | 6.283
           td.servants-percentual
             | 100%
           td.servants-salary-sum
-            | R$ #.###.###.###,##
+            | R$ 3.671.367.050,00
           td.servants-percentual-salary
             | 100%
 

@@ -1,9 +1,12 @@
-$green: #00A859;
-$yellow: #FFCC29;
-$blue: #3E4095;
+$green: #2ECC71;
+$yellow: #F1C40F;
+$blue: #2980B9;
 $clouds: #ECF0F1;
 $link: #3498DB;
 $silver: #BDC3C7;
+$red: #E74C3C;
+$black: #2C3E50;
+
 
 @mixin border-box {
   -webkit-box-sizing: border-box;
@@ -63,10 +66,7 @@ img {
 
 .header a,
 .showcase a {
-  color: $yellow;
-  &:hover {
-    color: white;
-  }
+  color: white;
 }
 
 .footer {
@@ -106,6 +106,30 @@ img {
 
 .senators-list {
   background: white;
+  .monitor {
+    .box {
+      background: $black;
+      color: white;
+      border-radius: 4px;
+      padding: .25em 1em;
+    }
+  }
+}
+.senators {
+  margin-top: 1em;
+  th,
+  td {
+    padding: .5em;
+    text-align: center;
+    vertical-align: middle;
+    margin: 0;
+  }
+  thead {
+    th {
+      background: $black;
+      color: white;
+    }
+  }
 }
 .senator {
   &:hover {
@@ -113,17 +137,15 @@ img {
       background: #EEE;
     }
   }
-  td {
-    vertical-align: middle;
-    text-align: center;
-    margin: 0;
-    padding: .25em;
-  }
   a {
     display: block;
   }
+  .senator-avatar {
+    padding: .5em 0;
+  }
   .senator-info {
     text-align: left;
+    padding-left: 0;
   }
   .senator-image {
     display: inline-block;
@@ -145,15 +167,37 @@ img {
   }
   .servants-count,
   .servants-percentual,
+  .servants-salary-sum,
   .servants-percentual-salary {
     font-size: 2em;
     font-weight: 900;
   }
-  .servants-salary-sum {
-    font-family: 'Menlo', 'Andale Mono', monospace;
-    font-weight: bold;
-    text-align: right;
+  .meter-wrapper {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    height: 1em;
+    overflow: hidden;
   }
+  span.meter-bar,
+  span.meter-label {
+    position: absolute;
+    display: block;
+    height: 1.25em;
+  }
+  span.meter-bar {
+    background: desaturate(lighten($link, 35%), 15%);
+  }
+  span.meter-label {
+    top: .25em;
+  }
+  .category-1 { color: darken($red, 10%); }
+  .category-2 { color: $red; }
+  .category-3 { color: lighten($red, 10%); }
+  .category-4 { color: $yellow; }
+  .category-5 { color: darken($green, 10%); }
+  .category-6 { color: $green; }
+  .category-7 { color: lighten($green, 10%); }
 }
 
 .graphs,
@@ -177,15 +221,7 @@ img {
     margin-right: 1em;
   }
   .profile-party {
-    background: $blue;
-    color: white;
-    border-radius: 3px;
     display: inline-block;
-    line-height: 1;
-    margin: 0;
-    padding: .25em .5em;
-    font-size: 1em;
-    font-weight: 400;
   }
 }
 
