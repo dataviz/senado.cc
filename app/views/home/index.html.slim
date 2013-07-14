@@ -3,33 +3,80 @@
     .row
       .span8
         h3
-          | Aplicativo para visualização de dados do portal de transparência do <a href='http://www.senado.gov.br/' target='_blank'>Senado Federal do Brasil</a>.
+          | Aplicativo para republicação e visualização dos dados do portal de transparência do <a href='http://www.senado.gov.br/' target='_blank'>Senado Federal do Brasil</a>.
       .span4.last
         .call-to-action
-          a.btn.btn-large[href='/data/senado.csv']
+          a[href='#data']
             | Download dos dados
-            br
-            small
-              | Em formato .CSV [984k]
-          a.btn.btn-large[href='https://github.com/dataviz/senado.cc']
-            | Projeto no GitHub
-            br
-            small
-              | Feito em HTML5, CSS & JS
+          br
+          a[href='#share']
+            | Share buttons
+          br
+          a[href='#share']
+            | GitHub and code stuff
 
 .what-is-and-what-it-does
   .container
-    .row
-      .span6
+    .row.reasoning.content-row
+      .span8
         h2
-          | O que é o Senado?
+          | Por que senado.cc?
         p
-          | Parágrafo explicando o que é de maneira simples
-      .span-6
+          | O senado.cc surgiu para redisponibilizar os dados publicados de maneira incorreta pelo portal de transparência do Senado Federal.
+        p
+          | Após termos negada nossa solicitação para disponibilização de uma lista consolidada e nominal com os proventos dos servidores, reagimos criando essa ferramenta que redisponibiliza o conteúdo da maneira certa.
+      .span4.centered
+        span.icon-beaker.icon-huge
+    br
+    .row.ass-covering.content-row
+      .span4.centered
+        span.icon-book.icon-huge
+      .span8
         h2
-          | Para que serve o Senado?
+          | E isso não é ilegal?
         p
-          | Explicar de maneira simples para o que serve
+          | Não, muito pelo contrário. Ilegal é o artificio utilizado pelo Senado para disponibilizar essas informações em primeiro lugar.
+        p
+          | Ao utilizar um artificio conhecido como #{link_to 'CAPTCHA [Wikipedia]', 'http://pt.wikipedia.org/wiki/CAPTCHA', target: '_blank'}, o portal de transparência do Senado impossibilita o acesso por máquina [e também de portadores de deficiência visual], ferindo assim o art. 8º, IV, do #{link_to 'Decreto 7.724/2012', '', target: '_blank'}:
+        .alert.alert-error
+          p
+            | "Art. 8º Os sítios na Internet dos órgãos e entidades <mark>deverão</mark> (…):
+            br
+            | (…)
+            br
+            | IV - <mark>possibilitar acesso automatizado por sistemas</mark> externos em formatos abertos, estruturados <mark>e legíveis por máquina</mark>;" [grifos nossos]
+        p
+          | Sendo os dados disponibilizados pelo portal de transparência serem atribuidos a licença de domínio público, o conteúdo pode ser redistribuido aqui de forma legal.
+    br
+    .row.data-visualization
+      .span8
+        h2
+          | Visualizações de dados
+        p
+          | Análise imparcial dos números.
+      .span4.centered
+        span.icon-bar-chart.icon-huge
+    .row.project-hosting.content-row
+      .span8
+        h2
+          | E… eu posso ajudar de alguma forma?
+        p
+          | Claro! O projeto tem código aberto no #{link_to 'GitHub', 'https://github.com/dataviz/senado.cc', target: '_blank'} e você pode #{link_to 'contribuir com código', 'https://github.com/dataviz/senado.cc', target: '_blank'}, #{link_to 'apontar sugestões ou erros', 'https://github.com/dataviz/senado.cc/issues', target: '_blank'} ou simplesmente #{link_to 'compartilhando no facebook', '#'}.
+      .span4.centered
+        span.icon-cloud.icon-huge
+    .row.dataset-download.content-row
+      .span8
+        h2
+          | Ok, mostre me os dados!
+        p
+          | Os dados utilizados pela aplicação podem ser baixados aqui mesmo, em formato aberto <span class="tapa-de-luva">(como deveria ter sido disponibilizado pelo Senado Federal)</span>:
+        p
+          a.btn.btn-large[href='#']
+            | Lista de proventos dos senadores [09/12–06/13]
+          a.btn.btn-large[href='#']
+            | Lista de proventos dos servidores do Senado [09/12–06/13]
+      .span4.centered
+        span.icon-cloud-download.icon-huge
 
 .senators-list
   .container

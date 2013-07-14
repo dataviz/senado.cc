@@ -6,7 +6,7 @@ html
       | senado.cc
     link[href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,700,900' rel='stylesheet' type='text/css']
     = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
-    /= javascript_include_tag "application", "data-turbolinks-track" => true
+    link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet"
     = csrf_meta_tags
     link[rel="shortcut icon" type="image/ico" href="http://www.datatables.net/favicon.ico"]
   body
@@ -27,6 +27,7 @@ html
         p
           a.btn[href='mailto:datavizbr@gmail.com' target='_blank']
             | Entre em contato: datavizbr@gmail.com
+    = javascript_include_tag "application", "data-turbolinks-track" => true
     javascript:
       var _gaq = _gaq || [];
       _gaq.push(['_setAccount', 'UA-36022391-1']);
