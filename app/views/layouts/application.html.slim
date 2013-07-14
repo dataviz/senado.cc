@@ -22,11 +22,20 @@ html
       == yield
     footer.footer
       .container
-        p
-          | #{Time.new.year} · <a target="_blank" href="http://dataviz.com.br/">dataviz.com.br</a> · <a href="http://creativecommons.org/publicdomain/zero/1.0/" target="_blank"><b>Domínio Público</b></a>
+        p.share
+          a[href='#']
+            | compartilhar no <b>facebook</b>
         p
           a.btn[href='mailto:datavizbr@gmail.com' target='_blank']
             | Entre em contato: datavizbr@gmail.com
+        p
+          | Links:
+          br
+          | #{link_to 'Lei 12.527 (18/nov/2011)', 'http://www.planalto.gov.br/ccivil_03/_ato2011-2014/2011/Lei/L12527.htm', target: '_blank'}
+          br
+          | #{link_to 'Decreto 7.724 (de 16/maio/2012)', 'http://www.planalto.gov.br/ccivil_03/_ato2011-2014/2012/Decreto/D7724.htm', target: '_blank'}
+        p.colophon
+          | #{Time.new.year} · <a target="_blank" href="http://dataviz.com.br/">dataviz.com.br</a> · <a href="http://creativecommons.org/publicdomain/zero/1.0/" target="_blank"><b>Domínio Público</b></a>
     = javascript_include_tag "application", "data-turbolinks-track" => true
     javascript:
       var _gaq = _gaq || [];

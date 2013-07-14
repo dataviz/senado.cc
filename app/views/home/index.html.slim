@@ -6,14 +6,14 @@
           | Aplicativo para republicação e visualização dos dados do portal de transparência do <a href='http://www.senado.gov.br/' target='_blank'>Senado Federal do Brasil</a>.
       .span4.last
         .call-to-action
-          a[href='#data']
-            | Download dos dados
-          br
-          a[href='#share']
-            | Share buttons
-          br
-          a[href='#share']
-            | GitHub and code stuff
+          = link_to '#data', class: 'btn btn-large' do
+            | Baixe os dados
+          = link_to '#dataviz', class: 'btn btn-large' do
+            | Visualize
+          = link_to '#share', class: 'btn btn-large' do
+            | Compartilhe
+          = link_to '#code', class: 'btn btn-large' do
+            | Veja o código
 
 .what-is-and-what-it-does
   .container
@@ -24,10 +24,9 @@
         p
           | O senado.cc surgiu para redisponibilizar os dados publicados de maneira incorreta pelo portal de transparência do Senado Federal.
         p
-          | Após termos negada nossa solicitação para disponibilização de uma lista consolidada e nominal com os proventos dos servidores, reagimos criando essa ferramenta que redisponibiliza o conteúdo da maneira certa.
+          | A intenção inicial era de gerar visualizações com os dados obtidos, porém, após termos #{link_to 'negada nossa solicitação de uma lista consolidada e nominal com os proventos dos servidores', 'http://queremossaber.org.br/request/lista_consolidada_de_proventos_d', target: '_blank'}, reagimos criando essa ferramenta que redisponibiliza o conteúdo da maneira correta.
       .span4.centered
         span.icon-beaker.icon-huge
-    br
     .row.ass-covering.content-row
       .span4.centered
         span.icon-book.icon-huge
@@ -37,7 +36,7 @@
         p
           | Não, muito pelo contrário. Ilegal é o artificio utilizado pelo Senado para disponibilizar essas informações em primeiro lugar.
         p
-          | Ao utilizar um artificio conhecido como #{link_to 'CAPTCHA [Wikipedia]', 'http://pt.wikipedia.org/wiki/CAPTCHA', target: '_blank'}, o portal de transparência do Senado impossibilita o acesso por máquina [e também de portadores de deficiência visual], ferindo assim o art. 8º, IV, do #{link_to 'Decreto 7.724/2012', '', target: '_blank'}:
+          | Ao utilizar um artificio conhecido como #{link_to 'CAPTCHA [Wikipedia]', 'http://pt.wikipedia.org/wiki/CAPTCHA', target: '_blank'}, o portal de transparência do Senado impossibilita o acesso por máquina [e também de portadores de deficiência visual], ferindo assim o art. 8º, IV, do #{link_to 'Decreto 7.724, de 16 de Maio de 2012', 'http://www.planalto.gov.br/ccivil_03/_ato2011-2014/2012/Decreto/D7724.htm', target: '_blank'}:
         .alert.alert-error
           p
             | "Art. 8º Os sítios na Internet dos órgãos e entidades <mark>deverão</mark> (…):
@@ -46,44 +45,121 @@
             br
             | IV - <mark>possibilitar acesso automatizado por sistemas</mark> externos em formatos abertos, estruturados <mark>e legíveis por máquina</mark>;" [grifos nossos]
         p
-          | Sendo os dados disponibilizados pelo portal de transparência serem atribuidos a licença de domínio público, o conteúdo pode ser redistribuido aqui de forma legal.
-    br
-    .row.data-visualization
+          | Além disso, os dados disponibilizados pelo portal de transparência tem a eles atribuidos a licença de domínio público, e sendo assim, seu conteúdo pode ser redistribuido em qualquer lugar de forma legal.
+    .row.data-visualization#dataviz
       .span8
         h2
           | Visualizações de dados
         p
           | Análise imparcial dos números.
+        ul
+          li
+            = link_to '/o-quadro-geral' do
+              | O Quadro Geral
+          li
+            = link_to '/gabinetes' do
+              | Por gabinetes
+          li
+            = link_to '/funcao' do
+              | Por função
+          li
+            | Em breve mais visualizações.
       .span4.centered
         span.icon-bar-chart.icon-huge
-    .row.project-hosting.content-row
+    .row.project-hosting.content-row#code
       .span8
         h2
-          | E… eu posso ajudar de alguma forma?
+          | E… posso contribuir de alguma maneira?
         p
-          | Claro! O projeto tem código aberto no #{link_to 'GitHub', 'https://github.com/dataviz/senado.cc', target: '_blank'} e você pode #{link_to 'contribuir com código', 'https://github.com/dataviz/senado.cc', target: '_blank'}, #{link_to 'apontar sugestões ou erros', 'https://github.com/dataviz/senado.cc/issues', target: '_blank'} ou simplesmente #{link_to 'compartilhando no facebook', '#'}.
+          | Claro! O projeto tem o #{link_to 'código aberto no github', 'https://github.com/dataviz/senado.cc', target: '_blank'} e você pode #{link_to 'contribuir com código', 'https://github.com/dataviz/senado.cc', target: '_blank'}, #{link_to 'apontar sugestões ou erros', 'https://github.com/dataviz/senado.cc/issues', target: '_blank'} ou simplesmente #{link_to 'compartilhar no facebook', '#'}.
       .span4.centered
-        span.icon-cloud.icon-huge
-    .row.dataset-download.content-row
+        span.icon-github.icon-huge
+    .row.dataset-download.content-row#data
       .span8
         h2
           | Ok, mostre me os dados!
         p
           | Os dados utilizados pela aplicação podem ser baixados aqui mesmo, em formato aberto <span class="tapa-de-luva">(como deveria ter sido disponibilizado pelo Senado Federal)</span>:
-        p
-          a.btn.btn-large[href='#']
-            | Lista de proventos dos senadores [09/12–06/13]
-          a.btn.btn-large[href='#']
-            | Lista de proventos dos servidores do Senado [09/12–06/13]
+        table.table
+          thead
+            tr
+              th
+              th
+                | Nome do Arquivo / Descrição
+              th
+                | Tamanho do Arquivo
+              th
+                | Período de coleta dos dados
+          tbody
+            tr
+              td
+                = link_to '#' do
+                  span.icon-cloud-download.icon-large
+              td
+                = link_to '#' do
+                  | proventos-dos-senadores.csv
+                p.muted
+                  | Lista nominal de proventos dos senadores
+              td
+                | 945kb
+              td
+                | 09/12 – 06/13
+            tr
+              td
+                = link_to '#' do
+                  span.icon-cloud-download.icon-large
+              td
+                = link_to '#' do
+                  | proventos-dos-servidores.csv
+                p.muted
+                  | Lista nominal de proventos dos servidores
+              td
+                | 53mb
+              td
+                | 09/12 – 06/13
       .span4.centered
         span.icon-cloud-download.icon-huge
-
+    .row.social-sharing.content-row#share
+      .span8
+        h2
+          | Gostei. Quero compartilhar!
+        p
+          | Ajude a espalhar o projeto para o maior número possível de pessoas!
+        p
+          = image_tag 'proto/like-box-count.png'
+          = image_tag 'proto/tweet-box-count.png'
+          = image_tag 'proto/gplus-box-count.png'
+      .span4.centered
+        span.icon-rocket.icon-huge
+    .row.clipping.content-row#clipping
+      .span8
+        h2
+          | Fomos notícia!
+        p
+          | Alguns veículos que divulgaram nosso projeto:
+        p
+          = link_to 'http://colunaesplanada.blogosfera.uol.com.br/2013/06/20/internauta-lanca-site-com-nomes-e-salarios-de-servidores-do-senado/', target: '_blank' do
+            = image_tag 'news/uol.png'
+      .span4.centered
+        span.icon-paper-clip.icon-huge
 .senators-list
   .container
     h2
       | Servidores por gabinete
     .monitor
       .row
+        .span4
+          .box.info-box
+            h3
+              | Indicador
+              small
+                | (descrição)
+            p.value
+              | Valor
+              small.standard-deviation<[title='Desvio padrão']
+                | (σ ± desvio)
+            p.info
+              | Informações adicionais
         .span4
           .box
             h3
@@ -95,6 +171,8 @@
               small.standard-deviation<[title='Desvio padrão']
                 | (σ ± 5)
             p.info
+              | 6.283 servidores / 81 gabinetes
+              br
               | Maior: 84 (Gabinete de Fulano de Tal)
               br
               | Menor: 2 (Gabinete de Circlano de Tal)
@@ -114,18 +192,6 @@
               | Maior: R$ 28 mil (10 servidores)
               br
               | Menor: R$ 800 (30 servidores)
-        .span4
-          .box
-            h3
-              | Indicador
-              small
-                | (descrição)
-            p.value
-              | Valor
-              small.standard-deviation<[title='Desvio padrão']
-                | (σ ± desvio)
-            p.info
-              | Informações adicionais
     table.table.senators
       thead
         tr
@@ -137,18 +203,24 @@
           th
           th
             | Senador(a)
+            br
+            small
+              | (partido / estado)
           th
             | Salário
+            br
+            small
+              | (em R$)
           th
             | Número de Servidores
             br
             small
-              | (absoluto / em percentual e desvio padrão)
+              | (absoluto e desvio - σ / em percentual do total)
           th
             | Salários dos servidores
             br
             small
-              | (absoluto / em percentual do total e desvio padrão)
+              | (absoluto em R$ e desvio - σ / em percentual do total)
       tbody
         - @senators.each do |senator|
           tr.senator
@@ -162,36 +234,37 @@
                 .senator-party-and-uf
                   | #{senator.partido}/#{senator.uf}
             td.senator-salary
-              | R$ #{24 + (rand*4).to_i} mil
+              | #{24 + (rand*4).to_i} mil
             td.servants-count
               span.servants-count-value>
                 | #{(rand*78).to_i+1}
-              small.servants-count-standard-deviation[title='Desvio padrão']
-                | (σ = #{(rand*1).to_i == 0 ? '+' : '-'} #{(rand*5).to_i})
+              small.servants-count-standard-deviation.standard-deviation[title='Desvio padrão']
+                | #{(rand*2).to_i == 0 ? '+' : '-'}#{(rand*5).to_i + 1}
               .meter-wrapper
                 - @x = rand * 2
                 - @y = (@x * 100).to_i
                 .meter-bar[style="width: #{@y}%"]
                 .meter-label
                   | #{@x.round(2)}%
-            td.servants-salaries[class="category-#{(rand*4).to_i + 1}"]
+            td.servants-salaries
               span.servants-salaries-sum>
                 | #{(rand*453).to_i + 1} mi
-              small.salaries-standard-deviation[title='Desvio padrão']
-                | (σ = #{(rand*1).to_i == 0 ? '+' : '-'} #{(rand*5).to_i} mi)
+              small.salaries-standard-deviation.standard-deviation[title='Desvio padrão']
+                | #{(rand*2).to_i == 0 ? '+' : '-'}#{(rand*50).to_i + 1} mi
               .servants-salaries-percentual
                 .meter-wrapper
-                  - @x = rand * 2
-                  - @y = (@x * 100).to_i
-                  .meter-bar[style="width: #{@y}%"]
+                  - @a = rand * 2
+                  - @b = (@a * 100).to_i
+                  .meter-bar[style="width: #{@b}%"]
                   .meter-label
-                    | #{@x.round(2)}%
+                    | #{@a.round(2)}%
       tfoot
         tr.senator
           td.senator-info[colspan=3]
             strong
               | #{@senators.count} senadores
-          td.servants-count[colspan=2]
-            | 6.283 servidores
-            span.servants-salary-sum
-              | R$ 3.671.367.050,00
+          td[colspan=2]
+            .servants-count
+              | 6.283 servidores
+            .servants-salaries
+              | Consomem R$ 3.67 bi dos cofres públicos.

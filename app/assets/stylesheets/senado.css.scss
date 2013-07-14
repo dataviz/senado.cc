@@ -92,10 +92,16 @@ img {
     margin-right: 1em;
   }
   .btn {
-    background: $green;
-    margin-bottom: 2em;
+    background: $yellow;
+    color: $black;
+    display: block;
+    margin-bottom: 1em;
     &:hover {
-      background: lighten($green, 5%);
+      background: lighten($yellow, 15%);
+    }
+    &:active {
+      position: relative;
+      top: 2px;
     }
   }
 }
@@ -104,21 +110,34 @@ img {
   padding: 3em 0;
   background: $clouds;
   font-size: 1.25em;
+  h2 {
+    padding-top: 1.5em;
+  }
   .content-row {
     padding: 3em 0;
   }
   .btn {
     background: $green;
   }
+  .icon-huge {
+    color: darken($clouds,6%);
+  }
 }
 
 .monitor {
   .box {
-    background: $silver;
+    background: $yellow;
     color: $black;
     border-radius: 4px;
-    padding: 3em 2em;
+    padding: 3em 2em 2em;
     text-align: center;
+    &.info-box {
+      background: $blue;
+      color: white;
+      .info {
+        padding: 1.4em 0;
+      }
+    }
   }
   h3 {
     margin: 0;
@@ -131,12 +150,13 @@ img {
   .value {
     font-size: 2em;
     font-weight: 900;
-    margin: 1em 0;
+    margin: 1.5em 0;
   }
 }
 
 .senators-list {
   background: white;
+  padding: 3em 0;
 }
 
 .senators {
@@ -150,14 +170,14 @@ img {
   }
   thead {
     th {
-      background: $silver;
+      background: lighten($clouds,2%);
     }
   }
 }
 .senator {
   &:hover {
     td {
-      background: #EEE;
+      background: lighten($clouds,2%);
     }
   }
   a {
@@ -204,7 +224,7 @@ img {
       width: 50%;
       float: left;
       padding-left: .5em;
-      margin: .5em 0;
+      margin: .5em 0 0;
     }
     span {
       text-align: right;
@@ -219,33 +239,24 @@ img {
   .meter-wrapper {
     position: relative;
     width: 100%;
-    height: 1em;
+    height: 1.75em;
     overflow: hidden;
-    opacity: .75;
+    background: lighten($clouds,4%);
   }
   .meter-bar,
   .meter-label {
     position: absolute;
-    height: 1.25em;
+    height: 1.75em;
   }
   .meter-bar {
-    background: $silver;
+    background: darken($clouds, 5%);
   }
   .meter-label {
     top: .25em;
     width: 100%;
-    line-height: .75em;
+    line-height: 1.25em;
+    color: $black;
   }
-  .category-1,
-  .category-2,
-  .category-3,
-  .category-4 {
-    border-right: .5em solid white;
-  }
-  .category-1 { border-right-color:         $red      ; }
-  .category-2 { border-right-color: lighten($red, 10%); }
-  .category-3 { border-right-color: lighten($red, 20%); }
-  .category-4 { border-right-color: lighten($red, 30%); }
 }
 
 .graphs,
@@ -275,7 +286,6 @@ img {
 
 .icon-huge {
   font-size: 10em;
-  color: darken($clouds,10%);
   display: block;
 }
 .centered {
