@@ -106,19 +106,36 @@ img {
   }
 }
 
-.what-is-and-what-it-does {
+.what-is-and-what-it-does,
+.code-share-clipping {
   padding: 3em 0;
-  background: $clouds;
   font-size: 1.25em;
+  line-height: 1.5em;
+  p {
+    margin-bottom: 1.5em;
+  }
   h2 {
     padding-top: 1.5em;
   }
   .content-row {
     padding: 3em 0;
   }
-  .btn {
-    background: $green;
+}
+.what-is-and-what-it-does {
+  background: white;
+  .icon-huge {
+    color: $clouds;
   }
+  mark {
+    text-transform: uppercase;
+    background: $red;
+    color: white;
+    text-shadow: none;
+  }
+}
+
+.code-share-clipping {
+  background: $clouds;
   .icon-huge {
     color: darken($clouds,6%);
   }

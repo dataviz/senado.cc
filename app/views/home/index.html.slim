@@ -18,25 +18,42 @@
 .what-is-and-what-it-does
   .container
     .row.reasoning.content-row
+      .span4.centered
+        span.icon-beaker.icon-huge
       .span8
         h2
           | Por que senado.cc?
         p
-          | O senado.cc surgiu para redisponibilizar os dados publicados de maneira incorreta pelo portal de transparência do Senado Federal.
+          | O senado.cc surgiu para redisponibilizar os dados publicados de maneira <em>incorreta</em> pelo portal de transparência do Senado Federal que atualmente faz uso de um artifício conhecido como #{link_to 'CAPTCHA [Wikipedia]', 'http://pt.wikipedia.org/wiki/CAPTCHA', target: '_blank'} para impossibilitar acesso ao seu conteúdo de maneira automatizada.
         p
-          | A intenção inicial era de gerar visualizações com os dados obtidos, porém, após termos #{link_to 'negada nossa solicitação de uma lista consolidada e nominal com os proventos dos servidores', 'http://queremossaber.org.br/request/lista_consolidada_de_proventos_d', target: '_blank'}, reagimos criando essa ferramenta que redisponibiliza o conteúdo da maneira correta.
+          | Nossa intenção inicial era levantar os dados relativos aos proventos de servidores do Senado Federal, porém descobrirmos também que o portal não fornecia uma lista consolidada e nominal. Após termos #{link_to 'uma solicitação negada', 'http://queremossaber.org.br/request/lista_consolidada_de_proventos_d', target: '_blank'} reagimos criando essa ferramenta que redisponibiliza o conteúdo da maneira correta.
+    .row.robot-bip-bip-bip.content-row
+      .span8
+        h2
+          | E como vocês conseguiram esses dados, então?
+        p
+          | Usando ferramentas abertas, #{link_to 'criamos um robô', '#robot', target: '_blank'} que navegava pelas páginas e quebrava o CAPTCHA, salvando o resultado em arquivos que posteriormente foram processados para o #{link_to 'formato aberto CSV', 'http://pt.wikipedia.org/wiki/Comma-separated_values', taraget: '_blank'}, para que pudesse ser facilmente utilizado em nossa aplicação de visualização de dados e facilmente distribuida para análise por jornalistas ou qualquer contribuinte.
+        .alert.alert-info
+          p
+            | Após um final de semana funcionando, nosso robô obteve cerca de 40% de todos os dados disponíveis no portal.
+          .progress.progress-info
+            .bar[style='width: 40%;']
+        p
+          | Infelizmente o site do Senado foi alterado[coincidência? #soquenão] na segunda-feira[rápidos, não?] e um novo CAPTCHA introduzido[!] o que quebrou o nosso robô. : (
       .span4.centered
-        span.icon-beaker.icon-huge
+        span.icon-linux.tux-rulz.icon-huge
     .row.ass-covering.content-row
       .span4.centered
         span.icon-book.icon-huge
       .span8
         h2
-          | E isso não é ilegal?
+          | Peraí, isso que vocês fizeram é ilegal?
         p
-          | Não, muito pelo contrário. Ilegal é o artificio utilizado pelo Senado para disponibilizar essas informações em primeiro lugar.
+          | Não, muito pelo contrário.
         p
-          | Ao utilizar um artificio conhecido como #{link_to 'CAPTCHA [Wikipedia]', 'http://pt.wikipedia.org/wiki/CAPTCHA', target: '_blank'}, o portal de transparência do Senado impossibilita o acesso por máquina [e também de portadores de deficiência visual], ferindo assim o art. 8º, IV, do #{link_to 'Decreto 7.724, de 16 de Maio de 2012', 'http://www.planalto.gov.br/ccivil_03/_ato2011-2014/2012/Decreto/D7724.htm', target: '_blank'}:
+          | É atribuido aos dados disponibilizados pelo portal de transparência a licença de domínio público e, sendo assim, seu conteúdo pode ser redistribuido em qualquer lugar.
+        p
+          | Ilegal, sim, é o uso do CAPTCHA para dificultar ou impossibilitar acesso dos dados abertos por máquina (e também por portadores de deficiência visual) o que fere o art. 8º, item IV, do #{link_to 'Decreto 7.724, de 16 de Maio de 2012', 'http://www.planalto.gov.br/ccivil_03/_ato2011-2014/2012/Decreto/D7724.htm', target: '_blank'}:
         .alert.alert-error
           p
             | "Art. 8º Os sítios na Internet dos órgãos e entidades <mark>deverão</mark> (…):
@@ -44,42 +61,12 @@
             | (…)
             br
             | IV - <mark>possibilitar acesso automatizado por sistemas</mark> externos em formatos abertos, estruturados <mark>e legíveis por máquina</mark>;" [grifos nossos]
-        p
-          | Além disso, os dados disponibilizados pelo portal de transparência tem a eles atribuidos a licença de domínio público, e sendo assim, seu conteúdo pode ser redistribuido em qualquer lugar de forma legal.
-    .row.data-visualization#dataviz
-      .span8
-        h2
-          | Visualizações de dados
-        p
-          | Análise imparcial dos números.
-        ul
-          li
-            = link_to '/o-quadro-geral' do
-              | O Quadro Geral
-          li
-            = link_to '/gabinetes' do
-              | Por gabinetes
-          li
-            = link_to '/funcao' do
-              | Por função
-          li
-            | Em breve mais visualizações.
-      .span4.centered
-        span.icon-bar-chart.icon-huge
-    .row.project-hosting.content-row#code
-      .span8
-        h2
-          | E… posso contribuir de alguma maneira?
-        p
-          | Claro! O projeto tem o #{link_to 'código aberto no github', 'https://github.com/dataviz/senado.cc', target: '_blank'} e você pode #{link_to 'contribuir com código', 'https://github.com/dataviz/senado.cc', target: '_blank'}, #{link_to 'apontar sugestões ou erros', 'https://github.com/dataviz/senado.cc/issues', target: '_blank'} ou simplesmente #{link_to 'compartilhar no facebook', '#'}.
-      .span4.centered
-        span.icon-github.icon-huge
     .row.dataset-download.content-row#data
       .span8
         h2
-          | Ok, mostre me os dados!
+          | Ok, onde estão os dados?
         p
-          | Os dados utilizados pela aplicação podem ser baixados aqui mesmo, em formato aberto <span class="tapa-de-luva">(como deveria ter sido disponibilizado pelo Senado Federal)</span>:
+          | Aqui mesmo, em #{link_to 'formato aberto', 'http://pt.wikipedia.org/wiki/Formato_aberto', target: '_blank'} <span class="tapa-de-luva">(como deveria ter sido disponibilizado pelo Senado Federal)</span>:
         table.table
           thead
             tr
@@ -89,7 +76,9 @@
               th
                 | Tamanho do Arquivo
               th
-                | Período de coleta dos dados
+                | Período dos dados coletados
+              th
+                | Status
           tbody
             tr
               td
@@ -104,6 +93,10 @@
                 | 945kb
               td
                 | 09/12 – 06/13
+              td
+                | Parcial
+                .progress.progress-success
+                  .bar[style='width:40%;']
             tr
               td
                 = link_to '#' do
@@ -117,8 +110,51 @@
                 | 53mb
               td
                 | 09/12 – 06/13
+              td
+                | Parcial
+                .progress.progress-success
+                  .bar[style='width:40%;']
+            tr
+              td
+                = link_to '#' do
+                  span.icon-cloud-download.icon-large
+              td
+                = link_to '#' do
+                  | ceaps.csv
+                p.muted
+                  | Cota para o Exercício da Atividade Parlamentar dos Senadores - Ceaps
+              td
+                | 12mb
+              td
+                | 09/12 – 06/13
+              td
+                | COMPLETA
+                .progress.progress-success
+                  .bar[style='width:100%;']
       .span4.centered
         span.icon-cloud-download.icon-huge
+    .row.data-visualization#dataviz
+      .span8
+        h2
+          | Visualizações de dados
+        p
+          | Análises imparciais dos números.
+        ul
+          li
+            = link_to '/o-quadro-geral' do
+              | O Quadro Geral
+          li
+            = link_to '/gabinetes' do
+              | Por gabinetes
+          li
+            = link_to '/funcao' do
+              | Por função
+          li
+            | Em breve mais visualizações.
+      .span4.centered
+        span.icon-bar-chart.icon-huge
+.code-share-clipping
+  .container
     .row.social-sharing.content-row#share
       .span8
         h2
@@ -131,6 +167,16 @@
           = image_tag 'proto/gplus-box-count.png'
       .span4.centered
         span.icon-rocket.icon-huge
+    .row.project-hosting.content-row#code
+      .span8
+        h2
+          | E… posso contribuir de alguma maneira?
+        p
+          | Claro! O projeto tem o #{link_to 'código aberto no github', 'https://github.com/dataviz/senado.cc', target: '_blank'} e você pode #{link_to 'contribuir com código', 'https://github.com/dataviz/senado.cc', target: '_blank'}, #{link_to 'apontar sugestões ou erros', 'https://github.com/dataviz/senado.cc/issues', target: '_blank'} ou simplesmente #{link_to 'compartilhar no facebook', '#'}.
+        p
+          | Você também pode ajudar #{link_to 'solicitando as informações para o Senado Federal', '#'} e nos mandando o resultado.
+      .span4.centered
+        span.icon-github.icon-huge
     .row.clipping.content-row#clipping
       .span8
         h2
