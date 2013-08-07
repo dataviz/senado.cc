@@ -17,7 +17,6 @@ html
         .menu.pull-right
           nav
             input.search[type='search' placeholder='buscar por senador']
-
     .main
       == yield
     footer.footer
@@ -29,8 +28,6 @@ html
           a.btn[href='mailto:datavizbr@gmail.com' target='_blank']
             | Entre em contato: datavizbr@gmail.com
         p
-          | Links:
-          br
           | #{link_to 'Lei 12.527 (18/nov/2011)', 'http://www.planalto.gov.br/ccivil_03/_ato2011-2014/2011/Lei/L12527.htm', target: '_blank'}
           br
           | #{link_to 'Decreto 7.724 (de 16/maio/2012)', 'http://www.planalto.gov.br/ccivil_03/_ato2011-2014/2012/Decreto/D7724.htm', target: '_blank'}
