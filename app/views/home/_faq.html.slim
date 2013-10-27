@@ -1,0 +1,36 @@
+#faq
+  .container
+    .col-md-8.col-md-offset-2.content
+      h2
+        | Perguntas frequentes
+      dl
+        dt
+          | O que é o senado.cc?
+        dd
+          p
+            | O senado.cc é um portal de visualização e de redistribuição de dados abertos e disponibilizados através do portal de transparência do Senado Federal que tem como objetivo facilitar o acesso à população a compreensão dos dados.
+        dt
+          | Quem está por trás dele?
+        dd
+          p
+            | Somos o grupo #{link_to 'dataviz.com.br', 'http://dataviz.com.br', target: '_blank'}, formado por um time multidisciplinar formado por dois desenvolvedores e um designer com o propósito de estudar visualização de dados em projetos que contribuem para políticas de dados abertos e transparência governamental.
+        dt
+          | Por que estão acessando os dados do meu salário?
+        dd
+          | Acessamos os dados de todos os servidores públicos do Senado Federal com o objetivo de realizar comparações, visualizações, análises e estudos com relação aos gastos com salários.
+        dt
+          | Que dados estão coletando e o que pretendem fazer com isso?
+        dd
+          p
+            | Hoje coletamos os seguintes dados:
+          ul
+            - ['Nome', 'Período referente', 'Vínculo', 'Situação', 'Lotação', 'Cargo', 'Especialidade', 'Gabinete', 'Nome de Senador', 'Partido', 'Símbolo', 'Função', 'Proventos', 'Tipo da Folha', 'Estrutura Remuneratória Básica', 'Vantagens Pessoais', 'Vantagens Eventuais', 'Função Comissionada', 'Antecipação Natalina', 'Gratificação Natalina', 'Horas Extras', 'Outras Remunerações', 'Eventuais/Provisórias', 'Abono de Permanência', 'Descontos Obrigatórios', 'Reversão do Teto Constitucional', 'Imposto de Renda', 'PSSS', 'Faltas', 'Remuneração Após Descontos Obrigatórios', 'Vantagens Indenizatórias ', 'Vantagens Compensatórias', 'Diárias', 'Auxílios', 'Outras Vantagens Indenizatórias'].each do |item|
+              li
+                | #{item}
+        dt
+          | Isso que vocês fazem é legal?
+        dd
+          p
+            | Amparo legal:
+            br
+            = link_to 'http://www.planalto.gov.br/ccivil_03/leis/lcp/lcp131.htm'
