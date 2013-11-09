@@ -31,8 +31,8 @@ $.extend( $.fn.dataTableExt.oPagination, {
 				}
 			};
 
-			$(nPaging).addClass('pagination').append(
-				'<ul>'+
+			$(nPaging).append(
+				'<ul class="pagination">'+
 					'<li class="prev disabled"><a href="#">&larr; '+oLang.sPrevious+'</a></li>'+
 					'<li class="next disabled"><a href="#">'+oLang.sNext+' &rarr; </a></li>'+
 				'</ul>'
@@ -106,8 +106,8 @@ $(document).ready(function() {
 
     csvArray.pop(); // There's always an empty row, dunno why
 
-    $('#table').html( '<table cellpadding="0" cellspacing="0" border="0" class="display" id="example"></table>');
-    $('#example').dataTable( {
+    $('.datagrid').html( '<table cellpadding="0" cellspacing="0" border="0" class="table"></table>');
+    $('.datagrid table').dataTable( {
         "aaData": csvArray,
         "aoColumns": headers,
         "oLanguage": {
