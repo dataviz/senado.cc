@@ -113,8 +113,19 @@ $(document).ready(function() {
         "oLanguage": {
             "sUrl": "js/datatables.Portuguese.txt"
         },
-        "sDom": "<'row'<'span8'l><'span8'f>r>t<'row'<'span8'i><'span8'p>>",
-        "sPaginationType": "bootstrap"
+        "sDom": "<'row'<'span8'><'span8'f>r>t<'row'<'span8'i><'span8'p>>",
+        "sPaginationType": "bootstrap",
+        "aoColumnDefs": [
+          { "sClass": "currency", "aTargets": [12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27] }
+        ],
+        "fnDrawCallback": function() {
+          $('td.currency').each(function() {
+            var element = $(this),
+                value = element.html();
+
+            element.html(_formatCurrency(value));
+          });
+        }
     } );
   });
 
@@ -153,5 +164,20 @@ $(document).ready(function() {
     }
 
     return headers;
+  }
+
+  function _formatCurrency(num) {
+    num = num.toString().replace(/\$|\,/g, '');
+    if (isNaN(num))
+      num = "0";
+    sign = (num == (num = Math.abs(num)));
+    num = Math.floor(num * 100 + 0.50000000001);
+    cents = num % 100;
+    num = Math.floor(num / 100).toString();
+    if (cents < 10)
+      cents = "0" + cents;
+    for (var i = 0; i < Math.floor((num.length - (1 + i)) / 3); i++)
+      num = num.substring(0, num.length - (4 * i + 3)) + '.' + num.substring(num.length - (4 * i + 3));
+    return ((sign) ? '' : '-') + 'R$ ' + num + ',' + cents;
   }
 });
