@@ -113,7 +113,7 @@ $(document).ready(function() {
         "oLanguage": {
             "sUrl": "js/datatables.Portuguese.txt"
         },
-        "sDom": "<'row'<'span8'><'span8'f>r>t<'row'<'span8'i><'span8'p>>",
+        "sDom": "<'row'<'col-md-6'><'col-md-6 filter-by-query'f>r>t<'row'<'col-md-6'i><'col-md-6'p>>",
         "sPaginationType": "bootstrap",
         "aoColumnDefs": [
           { "sClass": "currency", "aTargets": [12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27] }

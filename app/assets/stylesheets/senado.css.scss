@@ -43,7 +43,7 @@ img {
   font-weight: bolder;
 }
 
-.header {
+header.header {
   background: $black;
   nav {
     text-align: right;
@@ -96,17 +96,27 @@ img {
 }
 
 .datagrid {
+  .header.currency {
+    white-space: nowrap;
+  }
   .currency {
     text-align: right;
     letter-spacing: 1px;
     padding: .5em;
-    display: inline-block;
+    /*display: inline-block;*/
   }
   .pagination {
     padding: 0;
     margin: 0;
     display: block;
   }
+}
+.filter-by-query,
+.pagination {
+  text-align: right;
+}
+.pagination > li {
+  display: inline-block;
 }
 
 .main {
