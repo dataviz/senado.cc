@@ -1,38 +1,30 @@
-#reasoning
+#about
   .container
-    .col-md-8.col-md-offset-2.content
+    .col-md-8.content
       h2
         | Sobre o projeto
       p
-        | O senado.cc é um portal que tem como objetivo extrair informações do portal de transparência do Senado Federal e republicá-los com visualizações que facilitem a compreensão dos dados.
+        | O senado.cc tem como objetivo extrair informações do portal de transparência do Senado Federal e republicá-los com visualizações que facilitem a compreensão dos dados.
       p
-        | A ideia do projeto surgiu da após nos depararmos com a impossibilidade de se obter uma listagem consolidada dos dados referentes aos salários de funcionários públicos.
+        | A ideia do projeto surgiu a partir da impossibilidade de se obter uma listagem consolidada dos dados referentes aos salários de funcionários públicos.
       p
-        | Nosso objetivo é realizar um estudo acerca dos salários e gastos de cada gabinete e infelizmente isso só será possível com uma listagem nominal de proventos (ou nomes e salários).
+        | Nosso objetivo é realizar um estudo acerca de gastos de cada gabinete e isso só será possível com uma listagem nominal de proventos (ou nomes e salários).
       p
-        | Infelizmente tivemos negada nossa #{link_to 'solicitação formal para abertura dos dados [Queremos Saber]', 'http://queremossaber.org.br/request/lista_consolidada_de_proventos_d', target: '_blank'} e resolvemos criar o <b>senado.cc</b> para redisponibilizar o conteúdo e facilitar o acesso aos jornalistas e contribuintes.
+        | Infelizmente tivemos negada nossa #{link_to 'solicitação formal para abertura dos dados [link externo para Queremos Saber]', 'http://queremossaber.org.br/request/lista_consolidada_de_proventos_d', target: '_blank'}.
       h3
         | Um pouco da nossa história até agora
       p
-        | Usando ferramentas abertas, #{link_to 'criamos um robô [GitHub]', '#link-para-repo-github', target: '_blank'} que navega pelas páginas e salva o resultado em arquivos HTML que posteriormente são processados para o #{link_to 'formato aberto e estruturado CSV [Wikipedia]', 'http://pt.wikipedia.org/wiki/Comma-separated_values', target: '_blank'}.
+        | Usando ferramentas abertas, #{link_to 'criamos um robô [link externo para GitHub]', '#link-para-repo-github', target: '_blank'} que navega pelas páginas e salva o resultado em arquivos HTML que posteriormente são processados para o #{link_to 'formato aberto e estruturado CSV [link externo para Wikipedia]', 'http://pt.wikipedia.org/wiki/Comma-separated_values', target: '_blank'}.
       .alert.alert-info
         h3
           | Status do download
         p
-          | Após um final de semana funcionando, nosso robô obteve cerca de <b>30,8%</b> de todos os dados disponíveis no portal.
+          | Após um final de semana funcionando, nosso robô obteve cerca de <b>3,54%</b> de todos os dados disponíveis no portal, referentes ao mês de setembro de 2012 o que representa somente a ponta do iceberg.
         h4
           | Total
           small.pull-right
-            | 39.104 de 126.620 registros
+            | 4.487 de 126.620 registros
         .progress.progress-info
-          .progress-bar[role="progressbar" aria-valuenow="30.8" aria-valuemin="0" aria-valuemax="100" style="width: 30.882956879%;"]
+          .progress-bar[role="progressbar" aria-valuenow="3.54" aria-valuemin="0" aria-valuemax="100" style="width: 3.543673985%;"]
             span.sr-only
-              | 30.882956879% Complete
-        h4
-          | Outubro 2013
-          small.pull-right
-            | 0 de 8.555 registros
-        .progress.progress-info
-          .progress-bar[role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;"]
-            span.sr-only
-              | 0% Complete
+              | 3.54% Complete

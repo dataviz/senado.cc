@@ -1,6 +1,6 @@
 #faq
   .container
-    .col-md-8.col-md-offset-2.content
+    .col-md-8.content
       h2
         | Perguntas frequentes
       dl
@@ -19,7 +19,7 @@
         dd
           | Acessamos os dados de todos os servidores públicos do Senado Federal com o objetivo de realizar comparações, visualizações, análises e estudos com relação aos gastos com salários.
         dt
-          | Que dados estão coletando e o que pretendem fazer com isso?
+          | Que dados estão coletando?
         dd
           p
             | Hoje coletamos os seguintes dados:
@@ -28,9 +28,13 @@
               li
                 | #{item}
         dt
-          | Isso que vocês fazem é legal?
+          | O que pretendem fazer com isso?
+        dd
+          | Nosso objetivo com esses dados é realizar uma série de análises e gerar visualizações que demonstrem e clarifiquem o custo de cada gabinete no Senado Federal.
+        dt
+          | Esse projeto é legal?
         dd
           p
             | Amparo legal:
             br
-            = link_to 'http://www.planalto.gov.br/ccivil_03/leis/lcp/lcp131.htm'
+            | #{link_to 'planalto.gov.br/ccivil_03/leis/lcp/lcp131', 'http://www.planalto.gov.br/ccivil_03/leis/lcp/lcp131.htm', target: '_blank'}

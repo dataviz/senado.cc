@@ -17,6 +17,7 @@ $black: #2C3E50;
 
 body {
   background-color: $silver;
+  padding-top: 75px;
 }
 
 body,
@@ -27,6 +28,10 @@ textarea,
 h1, h2, h3, h4, h5, h6,
 p {
   font-family: 'Source Sans Pro', sans-serif;
+}
+
+h2 {
+  margin-top: 95px;
 }
 
 a:hover {
@@ -45,9 +50,15 @@ img {
 
 header.header {
   background: $black;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 75px;
+  z-index: 1;
   nav {
     text-align: right;
-    line-height: 6em;
+    line-height: 75px;
     a {
       margin-left: 2em;
     }
@@ -93,6 +104,9 @@ header.header {
 .form,
 .data-download {
   margin-bottom: 1em;
+}
+.data-download {
+  margin-top: 85px;
 }
 
 .datagrid {
