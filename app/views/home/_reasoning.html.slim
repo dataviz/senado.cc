@@ -1,30 +1,68 @@
+sass:
+  p.hint
+    font-style: italic
+    font-size: .875em
+    color: #999
 #about
   .container
     .col-md-8.content
       h2
         | Sobre o projeto
       p
-        | O senado.cc tem como objetivo extrair informações do portal de transparência do Senado Federal e republicá-los com visualizações que facilitem a compreensão dos dados.
+        | O senado.cc surgiu a partir da impossibilidade de se obter uma listagem consolidada dos dados referentes aos salários de funcionários públicos.
       p
-        | A ideia do projeto surgiu a partir da impossibilidade de se obter uma listagem consolidada dos dados referentes aos salários de funcionários públicos.
+        | Os objetivos do projeto são:
+      ul
+        li
+          p
+            | Realizar um estudo acerca de gastos de cada gabinete;
+          p.hint
+            | Isso só será possível com uma listagem nominal de proventos (ou nomes e salários).
+        li
+          p
+            | Remover a barreira que a identificação impõe àqueles que desejam acessar dados públicos;
+          p.hint
+            | Evitando que um cidadão evite buscar informação pública por não querer se identificar, qualquer que seja seu motivo.
+        li
+          p
+            | Evitar o embarasso de servidores que buscam tirar satisfação de pessoas que desejam obter informações sobre os gastos públicos referentes ao pagamento de salários;
+          p.hint
+            | E com isso, evitamos casos de #{link_to 'servidores constrangendo quem acesse seus salários', 'http://www.correiobraziliense.com.br/app/noticia/politica/2013/04/07/interna_politica,358941/servidora-do-senado-que-chamou-homem-de-bisbilhoteiro-e-condenada.shtml', target: '_blank'};
+        li
+          p
+            | Tornar os dados acessíveis por deficientes visuais;
+          p.hint
+            | O atual portal apresenta uma restrição de acesso para deficientes visuais.
       p
-        | Nosso objetivo é realizar um estudo acerca de gastos de cada gabinete e isso só será possível com uma listagem nominal de proventos (ou nomes e salários).
+        | Acreditamos que, com as informações completas e nominais de salários, em formato aberto e legível por máquina, a população estará melhor equipada para fiscalizar os servidores do Senado.
+      p
+        | Isto já está tendo efeito, por um #{link_to 'trabalho jornalístico do Congresso em Foco', 'http://congressoemfoco.uol.com.br/category/supersalarios/', target: '_blank'} e, em 5 de novembro de 2013, o Senado cortou os supersalários de 528 servidores, poupando R$ 1,3 milhões só em outubro, mas essa disputa ainda não foi ganha, pois, no mesmo mês, existiam ainda #{link_to '27 servidores ganhando acima do teto', 'http://congressoemfoco.uol.com.br/noticias/senado-mantem-27-servidores-com-supersalarios/', target: '_blank'}.
       p
         | Infelizmente tivemos negada nossa #{link_to 'solicitação formal para abertura dos dados [link externo para Queremos Saber]', 'http://queremossaber.org.br/request/lista_consolidada_de_proventos_d', target: '_blank'}.
-      h3
-        | Um pouco da nossa história até agora
-      p
-        | Usando ferramentas abertas, #{link_to 'criamos um robô [link externo para GitHub]', '#link-para-repo-github', target: '_blank'} que navega pelas páginas e salva o resultado em arquivos HTML que posteriormente são processados para o #{link_to 'formato aberto e estruturado CSV [link externo para Wikipedia]', 'http://pt.wikipedia.org/wiki/Comma-separated_values', target: '_blank'}.
-      .alert.alert-info
+      /
         h3
-          | Status do download
+          | Um pouco da nossa história até agora
         p
-          | Após um final de semana funcionando, nosso robô obteve cerca de <b>3,54%</b> de todos os dados disponíveis no portal, referentes ao mês de setembro de 2012 o que representa somente a ponta do iceberg.
-        h4
-          | Total
-          small.pull-right
-            | 4.487 de 126.620 registros
-        .progress.progress-info
-          .progress-bar[role="progressbar" aria-valuenow="3.54" aria-valuemin="0" aria-valuemax="100" style="width: 3.543673985%;"]
-            span.sr-only
-              | 3.54% Complete
+          | Usando ferramentas abertas, #{link_to 'criamos um robô [link externo para GitHub]', '#link-para-repo-github', target: '_blank'} que navega pelas páginas e salva o resultado em arquivos HTML que posteriormente são processados para o #{link_to 'formato aberto e estruturado CSV [link externo para Wikipedia]', 'http://pt.wikipedia.org/wiki/Comma-separated_values', target: '_blank'}.
+        h2
+          | Roadmap
+        ul
+          li
+            | API
+          li
+            | Visualizações
+          li
+            |
+        .alert.alert-info
+          h3
+            | Status do download
+          p
+            | Após um final de semana funcionando, nosso robô obteve cerca de <b>3,54%</b> de todos os dados disponíveis no portal, referentes ao mês de setembro de 2012 o que representa somente a ponta do iceberg.
+          h4
+            | Total
+            small.pull-right
+              | 4.487 de 126.620 registros
+          .progress.progress-info
+            .progress-bar[role="progressbar" aria-valuenow="3.54" aria-valuemin="0" aria-valuemax="100" style="width: 3.543673985%;"]
+              span.sr-only
+                | 3.54% Complete
