@@ -35,3 +35,6 @@ gem 'pg', group: :production
 
 # App monitoring
 gem 'newrelic_rpm'
+
+# For Heroku
+gem 'rails_12factor', group: :production
