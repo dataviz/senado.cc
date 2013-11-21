@@ -30,6 +30,25 @@ SENADORES = ["4981", "391", "4527", "846", "945", "4988", "4869", "4697", "4837"
                "5048", "3372", "558", "4763", "4645", "1176", "604", "5016", "5070",
                "5144"]
 
+
+def slug(alcunha)
+  ret = alcunha.strip
+  # Substitui acentos
+  ret.gsub! /á/, 'a'
+  ret.gsub! /é/, 'e'
+  ret.gsub! /í/, 'i'
+  ret.gsub! /ó/, 'o'
+  ret.gsub! /ú/, 'u'
+  ret.gsub! /ã/, 'a'
+  ret.gsub! /â/, 'a'
+  ret.gsub! /ê/, 'e'
+  ret.gsub! /ô/, 'o'
+  # Remove alfanumericos
+  ret.gsub! /\s*[^A-Za-z0-9'\.]\s*/, '-'
+
+  ret.downcase
+end
+
 CSV.foreach(Rails.root + 'public/data/senadores.csv', headers: true) do |row|
 
   partido, uf = row['partido / UF'].split(' / ')
@@ -41,5 +60,5 @@ end
 ids = SENADORES
 
 Senador.all.each_with_index do |sen, idx|
-  sen.update_attributes! id_original: SENADORES[idx], alcunha: ALCUNHAS[idx]
+  sen.update_attributes! id_original: SENADORES[idx], alcunha: ALCUNHAS[idx], slug: slug(ALCUNHAS[idx])
 end
