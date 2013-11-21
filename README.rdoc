@@ -29,7 +29,11 @@ bundle install
 
 rake db:migrate
 
-4)Inicie a aplicação
+4) Carregue os dados no banco
+
+rake db:seed
+
+5)Inicie a aplicação
 
 rails s
 
